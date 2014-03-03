@@ -1,0 +1,862 @@
+module Integration
+
+imports Common
+imports KTechnique
+imports KBuiltinsBasic
+
+exports
+
+context-free syntax
+context-free priorities
+{
+	"notBool" Bool -> Bool {left, cons("Bool10Syn")}
+} > {
+	Bool "andBool" Bool -> Bool {left, cons("Bool12Syn")}
+	Bool "andThenBool" Bool -> Bool {left, cons("Bool13Syn")}
+} > {
+	Bool "xorBool" Bool -> Bool {left, cons("Bool14Syn")}
+} > {
+	Bool "orBool" Bool -> Bool {left, cons("Bool15Syn")}
+	Bool "orElseBool" Bool -> Bool {left, cons("Bool16Syn")}
+} > {
+	Bool "impliesBool" Bool -> Bool {left, cons("Bool17Syn")}
+} > { left:
+	Bool "==Bool" Bool -> Bool {left, cons("Bool18Syn")}
+	Bool "=/=Bool" Bool -> Bool {left, cons("Bool19Syn")}
+}
+
+context-free priorities
+{ right:
+	"~Int" Int -> Int {right, cons("Int120Syn")}
+} > { left:
+	Int "^Int" Int -> Int {left, cons("Int122Syn")}
+} > { left:
+	Int "*Int" Int -> Int {left, cons("Int123Syn")}
+	Int "/Int" Int -> Int {left, cons("Int124Syn")}
+	Int "%Int" Int -> Int {left, cons("Int125Syn")}
+	Int "divInt" Int -> Int {left, cons("Int126Syn")}
+	Int "modInt" Int -> Int {left, cons("Int127Syn")}
+} > { left:
+	Int "+Int" Int -> Int {left, cons("Int1PlusSyn")}
+	Int "-Int" Int -> Int {left, cons("Int128Syn")}
+} > { left:
+	Int ">>Int" Int -> Int {left, cons("Int129Syn")}
+	Int "<<Int" Int -> Int {left, cons("Int130Syn")}
+} > { left:
+	Int "&Int" Int -> Int {left, cons("Int132Syn")}
+} > { left:
+	Int "xorInt" Int -> Int {left, cons("Int133Syn")}
+} > { left:
+	Int "|Int" Int -> Int {left, cons("Int134Syn")}
+}
+
+context-free priorities
+{
+	Float "^Float" Float -> Float {left, cons("Float149Syn")}
+} > { left:
+	Float "*Float" Float -> Float {left, cons("Float150Syn")}
+	Float "/Float" Float -> Float {left, cons("Float152Syn")}
+	Float "%Float" Float -> Float {left, cons("Float153Syn")}
+} > { left:
+	Float "+Float" Float -> Float {left, cons("Float154Syn")}
+	Float "-Float" Float -> Float {left, cons("Float155Syn")}
+}
+
+context-free priorities
+{ left:
+	Float "<=Float" Float -> Bool {left, cons("Bool156Syn")}
+	Float "<Float" Float -> Bool {left, cons("Bool157Syn")}
+	Float ">=Float" Float -> Bool {left, cons("Bool158Syn")}
+	Float ">Float" Float -> Bool {left, cons("Bool159Syn")}
+	Float "==Float" Float -> Bool {left, cons("Bool160Syn")}
+	Float "=/=Float" Float -> Bool {left, cons("Bool162Syn")}
+}
+
+context-free priorities
+{ left:
+	K "==K" K -> Bool {cons("Bool1200Syn")}
+	K "=/=K" K -> Bool {cons("Bool1202Syn")}
+}
+
+%% subsorts 1
+context-free priorities
+{
+	FlowSpecDdef -> K
+	NoneStatement -> K
+	CapitalizedId -> K
+	Array -> K
+	FeatureDdefIdentifier -> K
+	TCPAnswer -> K
+	DzFloat -> K
+	DzString -> K
+	FlowSpecDdefFiness -> K
+	FeatureDdefFiness -> K
+	CompenentTypePropertyAssoc -> K
+	Int -> K
+	Identifier -> K
+	DzBool -> K
+	ComponentTypeIdentifier -> K
+	ModesSubclause -> K
+	Variable -> K
+	FeatureDdefList -> K
+	ProperTypeDdefList -> K
+	Char -> K
+	RequirModeSubclause -> K
+	FlowDdefList -> K
+	ProtoTypeDdef -> K
+	ComponentTypePropertyDdef -> K
+	ProtoTypeDdefList -> K
+	String -> K
+	ComponentAssocDdef -> K
+	Id -> K
+	AnnexSubclauseDdef -> K
+	Bool -> K
+	DzId -> K
+	ComponentCategory -> K
+	ComponentType -> K
+	DzInt -> K
+	ContainedPropertyAssoc -> K
+	ProtoTypeFiness -> K
+	Float -> K
+	Nat -> K
+	FeatureDdef -> K
+	AnnexSubDdefList -> K
+	ModeDdefList -> K
+	FlowSpecDdefIdentifier -> K
+	ProtoTypeDdefIdentifier -> K
+} > {
+	NoneStatement -> RequirModeSubclause
+	Identifier -> ProtoTypeDdefIdentifier
+	NoneStatement -> ContainedPropertyAssoc
+	String -> TCPAnswer
+	NoneStatement -> CompenentTypePropertyAssoc
+	Id -> Identifier
+	DzFloat -> Float
+	RequirModeSubclause -> ModeDdefList
+	ContainedPropertyAssoc -> ComponentTypePropertyDdef
+	DzBool -> Bool
+	FlowDdefList -> ComponentAssocDdef
+	NoneStatement -> ComponentTypePropertyDdef
+	FeatureDdefList -> ComponentAssocDdef
+	NoneStatement -> ModesSubclause
+	ModesSubclause -> ModeDdefList
+	ComponentTypePropertyDdef -> ComponentTypePropertyDdef
+	CompenentTypePropertyAssoc -> ComponentTypePropertyDdef
+	AnnexSubclauseDdef -> ComponentAssocDdef
+	DzId -> Id
+	Identifier -> FeatureDdefIdentifier
+	Id -> Variable
+	NoneStatement -> AnnexSubDdefList
+	DzString -> String
+	NoneStatement -> ComponentAssocDdef
+	NoneStatement -> AnnexSubclauseDdef
+	DzInt -> Int
+	Identifier -> ComponentTypeIdentifier
+	ProtoTypeDdefList -> ComponentAssocDdef
+	ProperTypeDdefList -> ComponentAssocDdef
+	ModeDdefList -> ComponentAssocDdef
+	Identifier -> FlowSpecDdefIdentifier
+} > {
+	K -> FlowSpecDdef
+	K -> NoneStatement
+	K -> CapitalizedId
+	K -> Array
+	K -> FeatureDdefIdentifier
+	K -> TCPAnswer
+	K -> DzFloat
+	K -> DzString
+	K -> FlowSpecDdefFiness
+	K -> FeatureDdefFiness
+	K -> CompenentTypePropertyAssoc
+	K -> Int
+	K -> Identifier
+	K -> DzBool
+	K -> ComponentTypeIdentifier
+	K -> ModesSubclause
+	K -> Variable
+	K -> FeatureDdefList
+	K -> ProperTypeDdefList
+	K -> Char
+	K -> RequirModeSubclause
+	K -> FlowDdefList
+	K -> ProtoTypeDdef
+	K -> ComponentTypePropertyDdef
+	K -> ProtoTypeDdefList
+	K -> String
+	K -> ComponentAssocDdef
+	K -> Id
+	K -> AnnexSubclauseDdef
+	K -> Bool
+	K -> DzId
+	K -> ComponentCategory
+	K -> ComponentType
+	K -> DzInt
+	K -> ContainedPropertyAssoc
+	K -> ProtoTypeFiness
+	K -> Float
+	K -> Nat
+	K -> FeatureDdef
+	K -> AnnexSubDdefList
+	K -> ModeDdefList
+	K -> FlowSpecDdefIdentifier
+	K -> ProtoTypeDdefIdentifier
+}
+
+%% subsorts 2
+context-free priorities
+{
+	K -> FlowSpecDdef
+	K -> NoneStatement
+	K -> CapitalizedId
+	K -> Array
+	K -> FeatureDdefIdentifier
+	K -> TCPAnswer
+	K -> DzFloat
+	K -> DzString
+	K -> FlowSpecDdefFiness
+	K -> FeatureDdefFiness
+	K -> CompenentTypePropertyAssoc
+	K -> Int
+	K -> Identifier
+	K -> DzBool
+	K -> ComponentTypeIdentifier
+	K -> ModesSubclause
+	K -> Variable
+	K -> FeatureDdefList
+	K -> ProperTypeDdefList
+	K -> Char
+	K -> RequirModeSubclause
+	K -> FlowDdefList
+	K -> ProtoTypeDdef
+	K -> ComponentTypePropertyDdef
+	K -> ProtoTypeDdefList
+	K -> String
+	K -> ComponentAssocDdef
+	K -> Id
+	K -> AnnexSubclauseDdef
+	K -> Bool
+	K -> DzId
+	K -> ComponentCategory
+	K -> ComponentType
+	K -> DzInt
+	K -> ContainedPropertyAssoc
+	K -> ProtoTypeFiness
+	K -> Float
+	K -> Nat
+	K -> FeatureDdef
+	K -> AnnexSubDdefList
+	K -> ModeDdefList
+	K -> FlowSpecDdefIdentifier
+	K -> ProtoTypeDdefIdentifier
+} .> {
+	FlowSpecDdef -> K
+	NoneStatement -> K
+	CapitalizedId -> K
+	Array -> K
+	FeatureDdefIdentifier -> K
+	TCPAnswer -> K
+	DzFloat -> K
+	DzString -> K
+	FlowSpecDdefFiness -> K
+	FeatureDdefFiness -> K
+	CompenentTypePropertyAssoc -> K
+	Int -> K
+	Identifier -> K
+	DzBool -> K
+	ComponentTypeIdentifier -> K
+	ModesSubclause -> K
+	Variable -> K
+	FeatureDdefList -> K
+	ProperTypeDdefList -> K
+	Char -> K
+	RequirModeSubclause -> K
+	FlowDdefList -> K
+	ProtoTypeDdef -> K
+	ComponentTypePropertyDdef -> K
+	ProtoTypeDdefList -> K
+	String -> K
+	ComponentAssocDdef -> K
+	Id -> K
+	AnnexSubclauseDdef -> K
+	Bool -> K
+	DzId -> K
+	ComponentCategory -> K
+	ComponentType -> K
+	DzInt -> K
+	ContainedPropertyAssoc -> K
+	ProtoTypeFiness -> K
+	Float -> K
+	Nat -> K
+	FeatureDdef -> K
+	AnnexSubDdefList -> K
+	ModeDdefList -> K
+	FlowSpecDdefIdentifier -> K
+	ProtoTypeDdefIdentifier -> K
+}
+context-free syntax
+	"#" K -> KLabel {cons("KLabel1279Syn")}
+	"requires data access" -> FeatureDdefFiness {cons("FeatureDdefFiness1446Syn")}
+	"#string2Int" "(" K ")" -> K {cons("K1399Syn")}
+	Map "=/=Map" Map -> Bool {cons("Bool1209Syn")}
+	K "inVars" K -> Bool {cons("Bool1299Syn")}
+	"#flush" "(" Int ")" -> K {cons("K1387Syn")}
+	"String2Int" "(" String ")" -> Int {cons("Int176Syn")}
+	Int "=/=Int" Int -> Bool {left, cons("Bool144Syn")}
+	"#substMap" "(" Map ")" -> K {cons("K1338Syn")}
+	"processor" -> ComponentCategory {cons("ComponentCategory1427Syn")}
+	"#isTCPError" "(" String ")" -> Bool {cons("Bool1234Syn")}
+	"#tcpError" "(" String ")" -> TCPAnswer {cons("TCPAnswer1228Syn")}
+	"flows" NoneStatement -> FlowDdefList {cons("FlowDdefList1452Syn")}
+	"#fReadChar" "(" Int ")" -> K {cons("K1402Syn")}
+	"lengthString" "(" String ")" -> Int {cons("Int167Syn")}
+	"getVariables" "(" K ")" -> Set {cons("Set1289Syn")}
+	"properties" NoneStatement -> ProperTypeDdefList {cons("ProperTypeDdefList1458Syn")}
+	"#noIO" -> List {cons("List1408Syn")}
+	"#stdout" -> Int {cons("Int1393Syn")}
+	"#patternMatch" "(" ListDlKDr "," ListDlKDr ")" -> K {cons("K1285Syn")}
+	"isVariable" "(" Map ")" -> Bool {cons("Bool1363Syn")}
+	"system" -> ComponentCategory {cons("ComponentCategory1430Syn")}
+	"#tell" "(" Int ")" -> K {cons("K1380Syn")}
+	String "==String" String -> Bool {left, cons("Bool166Syn")}
+	FlowSpecDdefIdentifier DouaPuncteDz FlowSpecDdefFiness FlowSpecDdefIdentifier ";" -> FlowSpecDdef {cons("FlowSpecDdef1453Syn")}
+	"#readChar" "(" ")" -> K {cons("K1400Syn")}
+	"Set2KTerm" "(" Set ")" -> K {cons("K1259Syn")}
+	"#changeLabel" "(" K "," K ")" -> K {cons("K1347Syn")}
+	K "[" Map "]" -> K {cons("K1326Syn")}
+	"process" -> ComponentCategory {cons("ComponentCategory1432Syn")}
+	"#if" Bool "#then" K "#else" K "#fi" -> K {cons("K1203Syn")}
+	"isVariable" "(" Bag ")" -> Bool {cons("Bool1362Syn")}
+	"Celllabel2K" CellLabel -> K {cons("K1273Syn")}
+	"Set2KLabel" Set -> KLabel {cons("KLabel1267Syn")}
+	"##tcpRequest" "(" String ")" -> String {cons("String1232Syn")}
+	"#substitutePlainList1" "(" K "," Map "," ListDlKDr ")" -> K {cons("K1345Syn")}
+	ModeDdefList -> ComponentAssocDdef {}
+	"#tcpRequest" "(" String ")" -> TCPAnswer {cons("TCPAnswer1229Syn")}
+	"#boundVars1" "(" K ")" -> K {cons("K1302Syn")}
+	"charString" "(" Int ")" -> String {cons("String168Syn")}
+	Identifier -> ProtoTypeDdefIdentifier {}
+	"#buffer" "(" K ")" -> List {cons("List1IOBufferSyn")}
+	ListDlKDr "=/=List{K}" ListDlKDr -> Bool {cons("Bool1222Syn")}
+	"vars" "(" Set ")" -> K {cons("K1287Syn")}
+	NoneStatement -> CompenentTypePropertyAssoc {}
+	Int -> K {}
+	Id -> Identifier {}
+	Int "==Int" Int -> Bool {left, cons("Bool143Syn")}
+	ContainedPropertyAssoc -> ComponentTypePropertyDdef {}
+	K "inList{K}" ListDlKDr -> Bool {cons("Bool1238Syn")}
+	"features" FeatureDdef -> FeatureDdefList {cons("FeatureDdefList1440Syn")}
+	"exists" Set "." Bool -> Bool {cons("Bool1349Syn")}
+	DzBool -> Bool {}
+	"minInt" "(" Int "," Int ")" -> Int {cons("Int135Syn")}
+	"Int2String" "(" Int ")" -> String {cons("String177Syn")}
+	"#fPutByte" "(" Int "," Int ")" -> K {cons("K1386Syn")}
+	"Map2K" Map -> K {cons("K1278Syn")}
+	"#eval" Map -> Bag {cons("Bag1EvalSyn")}
+	"#eof" "(" ")" -> K {cons("K1398Syn")}
+	"#printChar" "(" K ")" -> K {cons("K1404Syn")}
+	"#isMapInK" "(" K ")" -> Bool {cons("Bool1250Syn")}
+	"#freshSym" "(" K ")" -> K {cons("K1375Syn")}
+	"#isDigit" "(" Char ")" -> Bool {cons("Bool197Syn")}
+	"in port" -> FlowSpecDdefFiness {cons("FlowSpecDdefFiness1455Syn")}
+	"#substituteK" "(" K "," K ")" -> K {cons("K1327Syn")}
+	"isBuiltin" "(" K ")" -> Bool {cons("Bool1357Syn")}
+	"SMTCall" "(" String ")" -> String {cons("String1355Syn")}
+	"#binderSplit1" "(" KLabel "," Int "," ListDlKDr "," ListDlKDr "," ListDlKDr "," Set ")" -> K {cons("K1304Syn")}
+	"#removeCharsUponAck" "(" Int ")" -> List {cons("List1406Syn")}
+	"rfindString" "(" String "," String "," Int ")" -> Int {cons("Int173Syn")}
+	Int ">=Int" Int -> Bool {left, cons("Bool140Syn")}
+	"asciiString" "(" String ")" -> Int {cons("Int169Syn")}
+	"#freeVars" "(" ListDlKDr ")" -> K {cons("K1308Syn")}
+	"checkSat" "(" Bool ")" -> String {cons("String1356Syn")}
+	KLabel "==KLabel" KLabel -> Bool {cons("Bool1223Syn")}
+	"freshVariables" "(" Set "," K ")" -> K {cons("K1346Syn")}
+	"flows" FlowSpecDdef -> FlowDdefList {cons("FlowDdefList1450Syn")}
+	"features" NoneStatement -> FeatureDdefList {cons("FeatureDdefList1442Syn")}
+	"#ostream" "(" Int ")" -> List {cons("List1OutputStreamSyn")}
+	" " -> NoneStatement {cons("NoneStatement1459Syn")}
+	"isBound" "(" KLabel "," Int ")" -> Bool {cons("Bool1296Syn")}
+	Int "<=Int" Int -> Bool {left, cons("Bool138Syn")}
+	"getMatching" "(" ListDlKDr "," ListDlKDr ")" -> Map {cons("Map1283Syn")}
+	"#substitute" "(" K "," Map ")" -> K {cons("K1328Syn")}
+	"thread" -> ComponentCategory {cons("ComponentCategory1422Syn")}
+	"K2SMTLib" "(" K ")" -> String {cons("String1350Syn")}
+	"#fReadByte" "(" Int ")" -> K {cons("K1388Syn")}
+	List "=/=List" List -> Bool {cons("Bool1226Syn")}
+	"lengthList" List -> Int {cons("Int1262Syn")}
+	K "in" Set -> Bool {cons("Bool1254Syn")}
+	"isEmptySet" "(" Set ")" -> Bool {cons("Bool1258Syn")}
+	Int "<Int" Int -> Bool {left, cons("Bool139Syn")}
+	"#parseToken" "(" String "," String ")" -> K {cons("K198Syn")}
+	DzFloat -> Float {}
+	"#substituteBinder" "(" K "," Map "," K ")" -> K {cons("K1333Syn")}
+	"#fPeekByte" "(" Int ")" -> K {cons("K1383Syn")}
+	Map "(" K ")" -> K {cons("K1240Syn")}
+	"out data port" -> FeatureDdefFiness {cons("FeatureDdefFiness1445Syn")}
+	"#ioError" "(" String ")" -> K {cons("K1385Syn")}
+	"#freshSymSort" "(" String ")" -> K {cons("K1373Syn")}
+	"#putByte" "(" Int ")" -> K {cons("K1397Syn")}
+	"select" "(" Array "," Int ")" -> KResult {cons("KResult148Syn")}
+	"isSymbolicList" "(" List ")" -> K {cons("K1366Syn")}
+	FeatureDdefIdentifier DouaPuncteDz FeatureDdefFiness FeatureDdefIdentifier ";" -> FeatureDdef {cons("FeatureDdef1443Syn")}
+	"#freeVars" "(" ListDlKDr "," Set "," Set ")" -> K {cons("K1309Syn")}
+	ComponentCategory ComponentTypeIdentifier ComponentAssocDdef "end" ComponentTypeIdentifier ";" -> ComponentType {cons("ComponentType1409Syn")}
+	"dummyNat" -> Nat {cons("Nat146Syn")}
+	"in data port prototype" -> FeatureDdefFiness {cons("FeatureDdefFiness1449Syn")}
+	"#freshSubst" "(" Set "," Set "," Map ")" -> K {cons("K1337Syn")}
+	List "==List" List -> Bool {cons("Bool1225Syn")}
+	"isMatching" "(" ListDlKDr "," ListDlKDr ")" -> Bool {cons("Bool1282Syn")}
+	"#freeVarsBinder1" "(" K "," Set ")" -> K {cons("K1323Syn")}
+	Set "=/=Set" Set -> Bool {cons("Bool1206Syn")}
+	"Map" "(" ListDlKDr "|->" ListDlKDr ")" -> Map {cons("Map1243Syn")}
+	"List{K}2K" ListDlKDr -> K {cons("K1274Syn")}
+	"fresh" "(" K ")" -> Bool {cons("Bool1FreshSyn")}
+	"#open" "(" String ")" -> K {cons("K1376Syn")}
+	"absInt" "(" Int ")" -> Int {cons("Int137Syn")}
+	"#freshSubst1" "(" Set "," Set "," Map "," K "," K ")" -> K {cons("K1342Syn")}
+	String ">=String" String -> String {cons("String194Syn")}
+	K "#inList{K}" ListDlKDr -> Bool {cons("Bool1239Syn")}
+	"A-Dummy-Capitalized-Id-Just-Because-We-Do-Not-Allow-Empty-Productions-Yet" -> CapitalizedId {cons("CapitalizedId199Syn")}
+	"out data port prototype" -> ProtoTypeFiness {cons("ProtoTypeFiness1439Syn")}
+	"decomposeMatching" "(" ListDlKDr "," ListDlKDr ")" -> ListDlKDr {cons("ListDlKDr1284Syn")}
+	"#substituteList1" "(" K "," Map "," K "," ListDlKDr ")" -> K {cons("K1332Syn")}
+	Map "==Map" Map -> Bool {cons("Bool1208Syn")}
+	"keys" Map -> Set {cons("Set1245Syn")}
+	"Bag2K" Bag -> K {cons("K1276Syn")}
+	"#parse" "(" String "," K ")" -> List {cons("List1ParseSyn")}
+	"#freshSymN" "(" K "," Int ")" -> K {cons("K1374Syn")}
+	"#evalHelper" Map -> Bag {cons("Bag1EvalHelperSyn")}
+	"Vars2SMTLib" "(" Set ")" -> String {cons("String1352Syn")}
+	"intersectSet" "(" Set "," Set ")" -> Set {cons("Set1257Syn")}
+	"#freshVar" "(" K "," Set ")" -> K {cons("K1293Syn")}
+	"#rebind2" "(" K "," Int "," Map "," K ")" -> K {cons("K1340Syn")}
+	FlowDdefList -> ComponentAssocDdef {}
+	"isLocalFreshVar" "(" K ")" -> Bool {cons("Bool1295Syn")}
+	"K2Sort" "(" K ")" -> String {cons("String1365Syn")}
+	"Int2Float" "(" Int ")" -> Float {cons("Float163Syn")}
+	"#fPutBytes" "(" Int "," String ")" -> K {cons("K1389Syn")}
+	"isVariable" "(" Set ")" -> Bool {cons("Bool1360Syn")}
+	"isKLabelConstant" "(" KLabel ")" -> Bool {cons("Bool1364Syn")}
+	ModesSubclause -> ModeDdefList {}
+	"thread group" -> ComponentCategory {cons("ComponentCategory1423Syn")}
+	ListDlKDr "==List{K}" ListDlKDr -> Bool {cons("Bool1220Syn")}
+	"String2KLabel" "(" String ")" -> KLabel {cons("KLabel1String2KLabelSyn")}
+	"#freeVarsBinder2" "(" K "," K ")" -> K {cons("K1324Syn")}
+	"prototypes" ProtoTypeDdef -> ProtoTypeDdefList {cons("ProtoTypeDdefList1434Syn")}
+	Id -> Variable {}
+	"#stderr" -> Int {cons("Int1394Syn")}
+	"#getVarsFromK" "(" K ")" -> Set {cons("Set1288Syn")}
+	"#getSymLabel" "(" String ")" -> K {cons("K1370Syn")}
+	Set "==Set" Set -> Bool {cons("Bool1205Syn")}
+	"String2Id" "(" String ")" -> Id {cons("Id179Syn")}
+	"Float2String" "(" Float ")" -> String {cons("String174Syn")}
+	ProtoTypeDdef ProtoTypeDdef -> ProtoTypeDdef {cons("ProtoTypeDdef1437Syn")}
+	"#getVars1" "(" ListDlKDr "," Set ")" -> K {cons("K1292Syn")}
+	"dummy-this-Variable-needed-only-to-declare-sort" -> Variable {cons("Variable1358Syn")}
+	"Map2KLabel" Map -> KLabel {cons("KLabel1269Syn")}
+	String -> K {}
+	"Consts2SMTLib" "(" Set ")" -> String {cons("String1353Syn")}
+	"store" "(" Array "," Int "," K ")" -> Array {cons("Array147Syn")}
+	"Set2KTermAcc" "(" Set "," K ")" -> K {cons("K1260Syn")}
+	"isSymbolicBag" "(" Bag ")" -> K {cons("K1368Syn")}
+	String "+String" String -> String {left, cons("String165Syn")}
+	String ">String" String -> String {cons("String193Syn")}
+	"Bag2KLabel" Bag -> KLabel {cons("KLabel1266Syn")}
+	"#boundVars" "(" K ")" -> K {cons("K1300Syn")}
+	ComponentType ComponentType -> ComponentType {cons("ComponentType1420Syn")}
+	Map "[" ListDlKDr "/" ListDlKDr "]" -> Map {cons("Map1244Syn")}
+	Int ">Int" Int -> Bool {left, cons("Bool142Syn")}
+	"String2DotK" "(" String ")" -> K {cons("K1390Syn")}
+	"dummyChar" -> Char {cons("Char195Syn")}
+	"#freeVarsBinder" "(" K "," Set ")" -> K {cons("K1322Syn")}
+	DzString -> String {}
+	"#fPrintChar" "(" Int "," K ")" -> K {cons("K1405Syn")}
+	"isSymbolicSet" "(" Set ")" -> K {cons("K1367Syn")}
+	"SMTLibQuery" "(" Bool ")" -> String {cons("String1354Syn")}
+	"isVariable" "(" List ")" -> Bool {cons("Bool1359Syn")}
+	"#counter" -> Int {cons("Int1237Syn")}
+	"#convertToken" "(" String "," String ")" -> List {cons("List1407Syn")}
+	"List2KLabel" List -> KLabel {cons("KLabel1268Syn")}
+	"#rebind" "(" K "," K "," K "," K ")" -> K {cons("K1336Syn")}
+	Identifier -> FlowSpecDdefIdentifier {}
+	"#hasMapping" "(" Map "," K ")" -> Bool {cons("Bool1248Syn")}
+	" " -> Identifier {cons("Identifier1463Syn")}
+	"CellLabel2KLabel" CellLabel -> KLabel {cons("KLabel1264Syn")}
+	Map "<=Map" Map -> Bool {cons("Bool1207Syn")}
+	"#freezer" K -> KLabel {cons("KLabel1280Syn")}
+	"#substituteBinder2" "(" K "," Map "," K "," K ")" -> K {cons("K1335Syn")}
+	"#istream" "(" Int ")" -> List {cons("List1InputStreamSyn")}
+	"#peekByte" "(" ")" -> K {cons("K1396Syn")}
+	"#seek" "(" Int "," Int ")" -> K {cons("K1382Syn")}
+	"isBounding" "(" KLabel "," Int ")" -> Bool {cons("Bool1297Syn")}
+	"#substituteBinder1" "(" K "," Map "," K "," K ")" -> K {cons("K1334Syn")}
+	"device" -> ComponentCategory {cons("ComponentCategory1429Syn")}
+	String "<String" String -> String {cons("String190Syn")}
+	"forall" Set "." Bool -> Bool {cons("Bool1348Syn")}
+	"String2Bool" "(" String ")" -> K {cons("K1384Syn")}
+	"getKLabel" K -> KLabel {cons("KLabel1270Syn")}
+	"substrString" "(" String "," Int "," Int ")" -> String {cons("String170Syn")}
+	"#readByte" "(" ")" -> K {cons("K1395Syn")}
+	"#EOF" -> TCPAnswer {cons("TCPAnswer1227Syn")}
+	Id "_" Id -> Identifier {cons("Identifier1460Syn")}
+	Set "<=Set" Set -> Bool {cons("Bool1204Syn")}
+	"#substitutePlainList" "(" K "," Map ")" -> K {cons("K1344Syn")}
+	"Float2Int" "(" Float ")" -> Int {cons("Int164Syn")}
+	"List{K}2KLabel" ListDlKDr -> KLabel {cons("KLabel1265Syn")}
+	"#substituteFV" "(" K "," Map "," K ")" -> K {cons("K1329Syn")}
+	ComponentTypePropertyDdef -> ComponentTypePropertyDdef {}
+	CompenentTypePropertyAssoc -> ComponentTypePropertyDdef {}
+	"maxInt" "(" Int "," Int ")" -> Int {cons("Int136Syn")}
+	Set "-Set" Set -> Set {cons("Set1253Syn")}
+	"#patternMatch1" "(" ListDlKDr "," Map ")" -> K {cons("K1286Syn")}
+	"prototypes" NoneStatement -> ProtoTypeDdefList {cons("ProtoTypeDdefList1435Syn")}
+	NoneStatement -> ComponentAssocDdef {}
+	DzInt -> Int {}
+	"#getVars" "(" K ")" -> K {cons("K1290Syn")}
+	Identifier -> ComponentTypeIdentifier {}
+	"#freeVars1" "(" ListDlKDr "," K "," Set "," Set ")" -> K {cons("K1320Syn")}
+	Int "dividesInt" Int -> Bool {cons("Bool145Syn")}
+	"freeVariables" "(" ListDlKDr ")" -> Set {cons("Set1306Syn")}
+	"data" -> ComponentCategory {cons("ComponentCategory1424Syn")}
+	String "=/=String" String -> Bool {left, cons("Bool189Syn")}
+	"#retrieveTCPError" "(" String ")" -> String {cons("String1233Syn")}
+	"#checkTCPAnswer" "(" String ")" -> TCPAnswer {cons("TCPAnswer1230Syn")}
+	NoneStatement -> RequirModeSubclause {}
+	"#distinctCounter" "(" Int ")" -> Int {cons("Int1236Syn")}
+	"Id2String" "(" Id ")" -> String {cons("String178Syn")}
+	NoneStatement -> ContainedPropertyAssoc {}
+	String -> TCPAnswer {}
+	"#freshSymSortN" "(" String "," Int ")" -> K {cons("K1372Syn")}
+	RequirModeSubclause -> ModeDdefList {}
+	"subprogram" -> ComponentCategory {cons("ComponentCategory1425Syn")}
+	"out port" -> FlowSpecDdefFiness {cons("FlowSpecDdefFiness1456Syn")}
+	K "[" ListDlKDr "/" ListDlKDr "]" -> K {cons("K1325Syn")}
+	"bus" -> ComponentCategory {cons("ComponentCategory1428Syn")}
+	"properties" ComponentTypePropertyDdef -> ProperTypeDdefList {cons("ProperTypeDdefList1457Syn")}
+	"ltrim" "(" String ")" -> String {cons("String187Syn")}
+	ComponentAssocDdef ComponentAssocDdef -> ComponentAssocDdef {cons("ComponentAssocDdef1433Syn")}
+	NoneStatement -> ComponentTypePropertyDdef {}
+	"countAllOccurences" "(" String "," String ")" -> Int {cons("Int185Syn")}
+	FeatureDdefList -> ComponentAssocDdef {}
+	FeatureDdef FeatureDdef -> FeatureDdef {cons("FeatureDdef1444Syn")}
+	"KLabel2K" KLabel -> K {cons("K1272Syn")}
+	"#substituteList" "(" K "," Map "," K ")" -> K {cons("K1330Syn")}
+	"replaceFirst" "(" String "," String "," String ")" -> String {cons("String184Syn")}
+	"#isWhiteSpace" "(" Char ")" -> Bool {cons("Bool196Syn")}
+	Id "." Id -> Identifier {cons("Identifier1462Syn")}
+	KLabel "=/=KLabel" KLabel -> Bool {cons("Bool1224Syn")}
+	DzId -> Id {}
+	"#charString" "(" K ")" -> K {cons("K1403Syn")}
+	"trim" "(" String ")" -> String {cons("String186Syn")}
+	NoneStatement -> AnnexSubDdefList {}
+	"#getMapFromK" "(" K ")" -> Map {cons("Map1252Syn")}
+	"randomRandom" "(" Int ")" -> Int {cons("Int1235Syn")}
+	"KLabel2KLabel" KLabel -> KLabel {cons("KLabel1263Syn")}
+	NoneStatement -> AnnexSubclauseDdef {}
+	"#map" "(" Map ")" -> K {cons("K1249Syn")}
+	"#fEof" "(" Int ")" -> K {cons("K1379Syn")}
+	"#substitutePlain" "(" K "," Map ")" -> K {cons("K1343Syn")}
+	"freeVariables" "(" Set ")" -> Set {cons("Set1307Syn")}
+	"#rebind1" "(" K "," K ")" -> K {cons("K1339Syn")}
+	String "<=String" String -> String {cons("String192Syn")}
+	"String2Float" "(" String ")" -> Float {cons("Float175Syn")}
+	"#close" "(" Int ")" -> K {cons("K1378Syn")}
+	Map "[" Map "]" -> Map {cons("Map1UpdateMapWithMapSyn")}
+	Map "[" "undef" "/" ListDlKDr "]" -> Map {cons("Map1242Syn")}
+	"#splitedBinder" "(" ListDlKDr "," ListDlKDr "," Set ")" -> K {cons("K1298Syn")}
+	"#binderSplit2" "(" KLabel "," Int "," ListDlKDr "," ListDlKDr "," ListDlKDr "," Set "," K ")" -> K {cons("K1305Syn")}
+	SetItem "in" Set -> Bool {cons("Bool1255Syn")}
+	"#freshVar1" "(" Set "," K ")" -> K {cons("K1294Syn")}
+	Float -> K {}
+	"out data port prototype" -> FeatureDdefFiness {cons("FeatureDdefFiness1448Syn")}
+	KResult -> K {}
+	FlowSpecDdef FlowSpecDdef -> FlowSpecDdef {cons("FlowSpecDdef1454Syn")}
+	"values" Map -> Set {cons("Set1246Syn")}
+	"memory" -> ComponentCategory {cons("ComponentCategory1426Syn")}
+	NoneStatement -> ModesSubclause {}
+	AnnexSubclauseDdef -> ComponentAssocDdef {}
+	"replace" "(" String "," String "," String "," Int ")" -> String {cons("String183Syn")}
+	Identifier -> FeatureDdefIdentifier {}
+	"KLabel2String" "(" KLabel ")" -> String {cons("String180Syn")}
+	"data" -> ProtoTypeFiness {cons("ProtoTypeFiness1438Syn")}
+	K "#inSet" Set -> Bool {cons("Bool1256Syn")}
+	"replaceAll" "(" String "," String "," String ")" -> String {cons("String182Syn")}
+	ProtoTypeDdefIdentifier DouaPuncteDz ProtoTypeFiness ProtoTypeDdefIdentifier ";" -> ProtoTypeDdef {cons("ProtoTypeDdef1436Syn")}
+	ProtoTypeDdefList -> ComponentAssocDdef {}
+	"Set2K" Set -> K {cons("K1275Syn")}
+	"#binderSplit" "(" K ")" -> K {cons("K1303Syn")}
+	"in data port" -> FeatureDdefFiness {cons("FeatureDdefFiness1447Syn")}
+	"#stdin" -> Int {cons("Int1392Syn")}
+	"rtrim" "(" String ")" -> String {cons("String188Syn")}
+	"List2K" List -> K {cons("K1277Syn")}
+	ProperTypeDdefList -> ComponentAssocDdef {}
+	"findString" "(" String "," String "," Int ")" -> Int {cons("Int172Syn")}
+	"isSymbolicMap" "(" Map ")" -> K {cons("K1369Syn")}
+	"#reopen" "(" Int "," String ")" -> K {cons("K1377Syn")}
+	"$hasMapping" "(" Map "," K ")" -> Bool {cons("Bool1247Syn")}
+
+
+	DzDzString		-> DzString	{cons("DzString1Const")}
+	DzDzInt		-> DzInt	{cons("DzInt1Const")}
+	DzDzId		-> DzId	{cons("DzId1Const")}
+	DzKLabel		-> KLabel	{cons("KLabel1Const")}
+	DzDzBool		-> DzBool	{cons("DzBool1Const")}
+	DzDzFloat		-> DzFloat	{cons("DzFloat1Const")}
+
+	DzDzINT		-> DzDzInt
+	DzDzID		-> DzDzId
+	DzDzSTRING	-> DzDzString
+	DzDzFLOAT	-> DzDzFloat
+	":" -> DouaPuncteDz {cons("DouaPuncte")}
+
+context-free restrictions
+	DouaPuncteDz -/- [A-Z]
+
+lexical syntax
+	"true" -> DzDzBool
+	"false" -> DzDzBool
+	"isBinder" -> DzKLabel
+	"wrap-with" -> DzKLabel
+	"#set" -> DzKLabel
+	"isSet" -> DzKLabel
+
+
+%% sort predicates
+	"isFlowSpecDef"      -> DzKLabel
+	"isSymbolicFlowSpecDef"      -> DzKLabel
+	"#symFlowSpecDef"      -> DzKLabel
+	"isNoneStatement"      -> DzKLabel
+	"isSymbolicNoneStatement"      -> DzKLabel
+	"#symNoneStatement"      -> DzKLabel
+	"isCapitalizedId"      -> DzKLabel
+	"isSymbolicCapitalizedId"      -> DzKLabel
+	"#symCapitalizedId"      -> DzKLabel
+	"isArray"      -> DzKLabel
+	"isSymbolicArray"      -> DzKLabel
+	"#symArray"      -> DzKLabel
+	"isFeatureDefIdentifier"      -> DzKLabel
+	"isSymbolicFeatureDefIdentifier"      -> DzKLabel
+	"#symFeatureDefIdentifier"      -> DzKLabel
+	"isKResult"      -> DzKLabel
+	"isSymbolicKResult"      -> DzKLabel
+	"#symKResult"      -> DzKLabel
+	"isTCPAnswer"      -> DzKLabel
+	"isSymbolicTCPAnswer"      -> DzKLabel
+	"#symTCPAnswer"      -> DzKLabel
+	"is#Float"      -> DzKLabel
+	"isSymbolic#Float"      -> DzKLabel
+	"#sym#Float"      -> DzKLabel
+	"is#String"      -> DzKLabel
+	"isSymbolic#String"      -> DzKLabel
+	"#sym#String"      -> DzKLabel
+	"isFlowSpecDefFiness"      -> DzKLabel
+	"isSymbolicFlowSpecDefFiness"      -> DzKLabel
+	"#symFlowSpecDefFiness"      -> DzKLabel
+	"isFeatureDefFiness"      -> DzKLabel
+	"isSymbolicFeatureDefFiness"      -> DzKLabel
+	"#symFeatureDefFiness"      -> DzKLabel
+	"isCompenentTypePropertyAssoc"      -> DzKLabel
+	"isSymbolicCompenentTypePropertyAssoc"      -> DzKLabel
+	"#symCompenentTypePropertyAssoc"      -> DzKLabel
+	"isSet"      -> DzKLabel
+	"isSymbolicSet"      -> DzKLabel
+	"#symSet"      -> DzKLabel
+	"isInt"      -> DzKLabel
+	"isSymbolicInt"      -> DzKLabel
+	"#symInt"      -> DzKLabel
+	"isIdentifier"      -> DzKLabel
+	"isSymbolicIdentifier"      -> DzKLabel
+	"#symIdentifier"      -> DzKLabel
+	"is#Bool"      -> DzKLabel
+	"isSymbolic#Bool"      -> DzKLabel
+	"#sym#Bool"      -> DzKLabel
+	"isComponentTypeIdentifier"      -> DzKLabel
+	"isSymbolicComponentTypeIdentifier"      -> DzKLabel
+	"#symComponentTypeIdentifier"      -> DzKLabel
+	"isModesSubclause"      -> DzKLabel
+	"isSymbolicModesSubclause"      -> DzKLabel
+	"#symModesSubclause"      -> DzKLabel
+	"isVariable"      -> DzKLabel
+	"isSymbolicVariable"      -> DzKLabel
+	"#symVariable"      -> DzKLabel
+	"isMap"      -> DzKLabel
+	"isSymbolicMap"      -> DzKLabel
+	"#symMap"      -> DzKLabel
+	"isFeatureDefList"      -> DzKLabel
+	"isSymbolicFeatureDefList"      -> DzKLabel
+	"#symFeatureDefList"      -> DzKLabel
+	"isProperTypeDefList"      -> DzKLabel
+	"isSymbolicProperTypeDefList"      -> DzKLabel
+	"#symProperTypeDefList"      -> DzKLabel
+	"isChar"      -> DzKLabel
+	"isSymbolicChar"      -> DzKLabel
+	"#symChar"      -> DzKLabel
+	"isRequirModeSubclause"      -> DzKLabel
+	"isSymbolicRequirModeSubclause"      -> DzKLabel
+	"#symRequirModeSubclause"      -> DzKLabel
+	"isFlowDefList"      -> DzKLabel
+	"isSymbolicFlowDefList"      -> DzKLabel
+	"#symFlowDefList"      -> DzKLabel
+	"isProtoTypeDef"      -> DzKLabel
+	"isSymbolicProtoTypeDef"      -> DzKLabel
+	"#symProtoTypeDef"      -> DzKLabel
+	"isComponentTypePropertyDef"      -> DzKLabel
+	"isSymbolicComponentTypePropertyDef"      -> DzKLabel
+	"#symComponentTypePropertyDef"      -> DzKLabel
+	"isProtoTypeDefList"      -> DzKLabel
+	"isSymbolicProtoTypeDefList"      -> DzKLabel
+	"#symProtoTypeDefList"      -> DzKLabel
+	"isString"      -> DzKLabel
+	"isSymbolicString"      -> DzKLabel
+	"#symString"      -> DzKLabel
+	"isKLabel"      -> DzKLabel
+	"isSymbolicKLabel"      -> DzKLabel
+	"#symKLabel"      -> DzKLabel
+	"isComponentAssocDef"      -> DzKLabel
+	"isSymbolicComponentAssocDef"      -> DzKLabel
+	"#symComponentAssocDef"      -> DzKLabel
+	"isList{K}"      -> DzKLabel
+	"isSymbolicList{K}"      -> DzKLabel
+	"#symList{K}"      -> DzKLabel
+	"isId"      -> DzKLabel
+	"isSymbolicId"      -> DzKLabel
+	"#symId"      -> DzKLabel
+	"isAnnexSubclauseDef"      -> DzKLabel
+	"isSymbolicAnnexSubclauseDef"      -> DzKLabel
+	"#symAnnexSubclauseDef"      -> DzKLabel
+	"isBag"      -> DzKLabel
+	"isSymbolicBag"      -> DzKLabel
+	"#symBag"      -> DzKLabel
+	"isBool"      -> DzKLabel
+	"isSymbolicBool"      -> DzKLabel
+	"#symBool"      -> DzKLabel
+	"is#Id"      -> DzKLabel
+	"isSymbolic#Id"      -> DzKLabel
+	"#sym#Id"      -> DzKLabel
+	"isComponentCategory"      -> DzKLabel
+	"isSymbolicComponentCategory"      -> DzKLabel
+	"#symComponentCategory"      -> DzKLabel
+	"isComponentType"      -> DzKLabel
+	"isSymbolicComponentType"      -> DzKLabel
+	"#symComponentType"      -> DzKLabel
+	"isK"      -> DzKLabel
+	"isSymbolicK"      -> DzKLabel
+	"#symK"      -> DzKLabel
+	"is#Int"      -> DzKLabel
+	"isSymbolic#Int"      -> DzKLabel
+	"#sym#Int"      -> DzKLabel
+	"isContainedPropertyAssoc"      -> DzKLabel
+	"isSymbolicContainedPropertyAssoc"      -> DzKLabel
+	"#symContainedPropertyAssoc"      -> DzKLabel
+	"isProtoTypeFiness"      -> DzKLabel
+	"isSymbolicProtoTypeFiness"      -> DzKLabel
+	"#symProtoTypeFiness"      -> DzKLabel
+	"isList"      -> DzKLabel
+	"isSymbolicList"      -> DzKLabel
+	"#symList"      -> DzKLabel
+	"isFloat"      -> DzKLabel
+	"isSymbolicFloat"      -> DzKLabel
+	"#symFloat"      -> DzKLabel
+	"isNat"      -> DzKLabel
+	"isSymbolicNat"      -> DzKLabel
+	"#symNat"      -> DzKLabel
+	"isFeatureDef"      -> DzKLabel
+	"isSymbolicFeatureDef"      -> DzKLabel
+	"#symFeatureDef"      -> DzKLabel
+	"isAnnexSubDefList"      -> DzKLabel
+	"isSymbolicAnnexSubDefList"      -> DzKLabel
+	"#symAnnexSubDefList"      -> DzKLabel
+	"isModeDefList"      -> DzKLabel
+	"isSymbolicModeDefList"      -> DzKLabel
+	"#symModeDefList"      -> DzKLabel
+	"isFlowSpecDefIdentifier"      -> DzKLabel
+	"isSymbolicFlowSpecDefIdentifier"      -> DzKLabel
+	"#symFlowSpecDefIdentifier"      -> DzKLabel
+	"isProtoTypeDefIdentifier"      -> DzKLabel
+	"isSymbolicProtoTypeDefIdentifier"      -> DzKLabel
+	"#symProtoTypeDefIdentifier"      -> DzKLabel
+
+
+
+%% terminals reject
+	"Celllabel2K" -> VARID {reject}
+	"String2KLabel" -> VARID {reject}
+	"List2K" -> VARID {reject}
+	"K2Sort" -> VARID {reject}
+	"Float2Int" -> VARID {reject}
+	"Vars2SMTLib" -> VARID {reject}
+	"Set2KTerm" -> VARID {reject}
+	"Map2K" -> VARID {reject}
+	"K2SMTLib" -> VARID {reject}
+	"String2DotK" -> VARID {reject}
+	"Consts2SMTLib" -> VARID {reject}
+	"Set2K" -> VARID {reject}
+	"String2Int" -> VARID {reject}
+	"Int2String" -> VARID {reject}
+	"Map2KLabel" -> VARID {reject}
+	"SMTLibQuery" -> VARID {reject}
+	"String2Float" -> VARID {reject}
+	"List2KLabel" -> VARID {reject}
+	"String2Bool" -> VARID {reject}
+	"String2Id" -> VARID {reject}
+	"KLabel2K" -> VARID {reject}
+	"Float2String" -> VARID {reject}
+	"KLabel2String" -> VARID {reject}
+	"Bag2KLabel" -> VARID {reject}
+	"Bag2K" -> VARID {reject}
+	"SMTCall" -> VARID {reject}
+	"KLabel2KLabel" -> VARID {reject}
+	"Set2KTermAcc" -> VARID {reject}
+	"Id2String" -> VARID {reject}
+	"Map" -> VARID {reject}
+	"Int2Float" -> VARID {reject}
+	"CellLabel2KLabel" -> VARID {reject}
+	"Set2KLabel" -> VARID {reject}
+
+lexical restrictions
+	%% follow restrictions
+	"Set2K" -/- [T].[e].[r].[m]
+	"#substitute" -/- [P].[l].[a].[i].[n].[L].[i].[s].[t].[\1]
+	"#freeVars" -/- [B].[i].[n].[d].[e].[r].[\2]
+	"#substitute" -/- [K]
+	"#freshSym" -/- [S].[o].[r].[t]
+	"#freeVars" -/- [B].[i].[n].[d].[e].[r].[\1]
+	"#substitute" -/- [L].[i].[s].[t].[\1]
+	"fresh" -/- [V].[a].[r].[i].[a].[b].[l].[e].[s]
+	"=/=K" -/- [L].[a].[b].[e].[l]
+	"#" -/- [E].[O].[F]
+	"#freshSym" -/- [N]
+	"#freshSymSort" -/- [N]
+	"#substitute" -/- [B].[i].[n].[d].[e].[r].[\1]
+	"Map2K" -/- [L].[a].[b].[e].[l]
+	"/" -/- [F].[l].[o].[a].[t]
+	"#substitute" -/- [B].[i].[n].[d].[e].[r].[\2]
+	"#substitute" -/- [L].[i].[s].[t]
+	"#substitutePlain" -/- [L].[i].[s].[t]
+	"#substitute" -/- [F].[V]
+	"in" -/- [V].[a].[r].[s]
+	"#substitute" -/- [B].[i].[n].[d].[e].[r]
+	"Set2KTerm" -/- [A].[c].[c]
+	"#freshSym" -/- [S].[o].[r].[t].[N]
+	"#parse" -/- [T].[o].[k].[e].[n]
+	"Set2K" -/- [L].[a].[b].[e].[l]
+	"KLabel2K" -/- [L].[a].[b].[e].[l]
+	"#substitute" -/- [P].[l].[a].[i].[n]
+	"#substitutePlain" -/- [L].[i].[s].[t].[\1]
+	"replace" -/- [F].[i].[r].[s].[t]
+	"#freeVars" -/- [B].[i].[n].[d].[e].[r]
+	"#substitute" -/- [P].[l].[a].[i].[n].[L].[i].[s].[t]
+	"Bag2K" -/- [L].[a].[b].[e].[l]
+	"#eval" -/- [H].[e].[l].[p].[e].[r]
+	"/" -/- [I].[n].[t]
+	"List{K}2K" -/- [L].[a].[b].[e].[l]
+	"replace" -/- [A].[l].[l]
+	"#getVars" -/- [F].[r].[o].[m].[K]
+	"Set2K" -/- [T].[e].[r].[m].[A].[c].[c]
+	"==K" -/- [L].[a].[b].[e].[l]
+	"List2K" -/- [L].[a].[b].[e].[l]
+lexical restrictions
+%% some restrictions to ensure greedy matching for user defined constants
+	DzDzId  -/- [a-zA-Z0-9]
+	DzDzInt -/- [0-9]
+	"is" -/- [\#A-Z]
+

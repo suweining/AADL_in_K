@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<maudeml>
+ <result cpu-time-ms="0" real-time-ms="0" total-rewrites="5">
+  <term op="&lt;_&gt;_&lt;/_&gt;" sort="BagItem">
+   <term op="generatedTop" sort="CellLabel"/>
+   <term op="&lt;_&gt;_&lt;/_&gt;" sort="BagItem">
+    <term op="k" sort="CellLabel"/>
+    
+    <term op="'__" sort="KLabel">
+     <term op="'__" sort="KLabel">
+      <term op="'___end_;" sort="KLabel">
+       <term op="'system" sort="KLabel">
+        <term op=".List`{K`}" sort="List`{K`}"/>
+       </term>
+       <term op="#_" sort="KLabel">
+            <term op="#id_" sort="#Id">
+             <term op="&quot;FileSystem&quot;" sort="#String"/>
+            </term>
+           <term op=".List`{K`}" sort="List`{K`}"/>
+       </term>
+       <term op="'features_" sort="KLabel">
+        <term op="'_:__;" sort="KLabel">
+         <term op="#_" sort="KLabel">
+               <term op="#id_" sort="#Id">
+                <term op="&quot;root&quot;" sort="#String"/>
+               </term>
+              <term op=".List`{K`}" sort="List`{K`}"/>
+         </term>
+         <term op="'requiresdataaccess" sort="KLabel">
+          <term op=".List`{K`}" sort="List`{K`}"/>
+         </term>
+         <term op="'_._" sort="KLabel">
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;Directory&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;hashed&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+         </term>
+        </term>
+       </term>
+       <term op="#_" sort="KLabel">
+            <term op="#id_" sort="#Id">
+             <term op="&quot;FileSystem&quot;" sort="#String"/>
+            </term>
+           <term op=".List`{K`}" sort="List`{K`}"/>
+       </term>
+      </term>
+      <term op="'___end_;" sort="KLabel">
+       <term op="'process" sort="KLabel">
+        <term op=".List`{K`}" sort="List`{K`}"/>
+       </term>
+       <term op="#_" sort="KLabel">
+            <term op="#id_" sort="#Id">
+             <term op="&quot;Application&quot;" sort="#String"/>
+            </term>
+           <term op=".List`{K`}" sort="List`{K`}"/>
+       </term>
+       <term op="'features_" sort="KLabel">
+        <term op="'__" sort="KLabel">
+         <term op="'_:__;" sort="KLabel">
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;resualt&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="'outdataport" sort="KLabel">
+           <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="'___" sort="KLabel">
+           <term op="#_" sort="KLabel">
+                   <term op="#id_" sort="#Id">
+                    <term op="&quot;result&quot;" sort="#String"/>
+                   </term>
+                  <term op=".List`{K`}" sort="List`{K`}"/>
+           </term>
+           <term op="#_" sort="KLabel">
+                   <term op="#id_" sort="#Id">
+                    <term op="&quot;type&quot;" sort="#String"/>
+                   </term>
+                  <term op=".List`{K`}" sort="List`{K`}"/>
+           </term>
+          </term>
+         </term>
+         <term op="'_:__;" sort="KLabel">
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;home&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="'requiresdataaccess" sort="KLabel">
+           <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="'_._" sort="KLabel">
+           <term op="#_" sort="KLabel">
+                   <term op="#id_" sort="#Id">
+                    <term op="&quot;Directory&quot;" sort="#String"/>
+                   </term>
+                  <term op=".List`{K`}" sort="List`{K`}"/>
+           </term>
+           <term op="#_" sort="KLabel">
+                   <term op="#id_" sort="#Id">
+                    <term op="&quot;hash&quot;" sort="#String"/>
+                   </term>
+                  <term op=".List`{K`}" sort="List`{K`}"/>
+           </term>
+          </term>
+         </term>
+        </term>
+       </term>
+       <term op="#_" sort="KLabel">
+            <term op="#id_" sort="#Id">
+             <term op="&quot;Application&quot;" sort="#String"/>
+            </term>
+           <term op=".List`{K`}" sort="List`{K`}"/>
+       </term>
+      </term>
+     </term>
+     <term op="'___end_;" sort="KLabel">
+      <term op="'thread" sort="KLabel">
+       <term op=".List`{K`}" sort="List`{K`}"/>
+      </term>
+      <term op="#_" sort="KLabel">
+          <term op="#id_" sort="#Id">
+           <term op="&quot;Calculate&quot;" sort="#String"/>
+          </term>
+         <term op=".List`{K`}" sort="List`{K`}"/>
+      </term>
+      <term op="'__" sort="KLabel">
+       <term op="'prototypes_" sort="KLabel">
+        <term op="'_:__;" sort="KLabel">
+         <term op="#_" sort="KLabel">
+               <term op="#id_" sort="#Id">
+                <term op="&quot;datatype&quot;" sort="#String"/>
+               </term>
+              <term op=".List`{K`}" sort="List`{K`}"/>
+         </term>
+         <term op="'outdataportprototype" sort="KLabel">
+          <term op=".List`{K`}" sort="List`{K`}"/>
+         </term>
+         <term op="#_" sort="KLabel">
+               <term op="#id_" sort="#Id">
+                <term op="&quot;datatype&quot;" sort="#String"/>
+               </term>
+              <term op=".List`{K`}" sort="List`{K`}"/>
+         </term>
+        </term>
+       </term>
+       <term op="'features_" sort="KLabel">
+        <term op="'__" sort="KLabel">
+         <term op="'_:__;" sort="KLabel">
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;input&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="'indataportprototype" sort="KLabel">
+           <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;datatype&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+         </term>
+         <term op="'_:__;" sort="KLabel">
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;result&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="'outdataportprototype" sort="KLabel">
+           <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+          <term op="#_" sort="KLabel">
+                 <term op="#id_" sort="#Id">
+                  <term op="&quot;datatype&quot;" sort="#String"/>
+                 </term>
+                <term op=".List`{K`}" sort="List`{K`}"/>
+          </term>
+         </term>
+        </term>
+       </term>
+      </term>
+      <term op="#_" sort="KLabel">
+          <term op="#id_" sort="#Id">
+           <term op="&quot;Calculate&quot;" sort="#String"/>
+          </term>
+         <term op=".List`{K`}" sort="List`{K`}"/>
+      </term>
+     </term>
+    </term>
+    <term op="k" sort="CellLabel"/>
+   </term>
+   <term op="generatedTop" sort="CellLabel"/>
+  </term>
+ </result>
+</maudeml>

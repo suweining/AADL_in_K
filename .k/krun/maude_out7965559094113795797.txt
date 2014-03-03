@@ -1,0 +1,5 @@
+Maude> rewrites: 5 in 0ms cpu (0ms real) (~ rewrites/second)
+result BagItem: 
+< generatedTop > 
+ < k > '__('__('___end_;('system(.List{K}),,# #id "FileSystem"(.List{K}),,'features_('_:__;(# #id "root"(.List{K}),,'requiresdataaccess(.List{K}),,'_._(# #id "Directory"(.List{K}),,# #id "hashed"(.List{K})))),,# #id "FileSystem"(.List{K})),,'___end_;('process(.List{K}),,# #id "Application"(.List{K}),,'features_('__('_:__;(# #id "resualt"(.List{K}),,'outdataport(.List{K}),,'___(# #id "result"(.List{K}),,# #id "type"(.List{K}))),,'_:__;(# #id "home"(.List{K}),,'requiresdataaccess(.List{K}),,'_._(# #id "Directory"(.List{K}),,# #id "hash"(.List{K}))))),,# #id "Application"(.List{K}))),,'___end_;('thread(.List{K}),,# #id "Calculate"(.List{K}),,'__('prototypes_('_:__;(# #id "datatype"(.List{K}),,'outdataportprototype(.List{K}),,# #id "datatype"(.List{K}))),,'features_('__('_:__;(# #id "input"(.List{K}),,'indataportprototype(.List{K}),,# #id "datatype"(.List{K})),,'_:__;(# #id "result"(.List{K}),,'outdataportprototype(.List{K}),,# #id "datatype"(.List{K}))))),,# #id "Calculate"(.List{K}))) </ k > </ generatedTop >
+Maude> Bye.

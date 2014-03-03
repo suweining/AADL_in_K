@@ -1,0 +1,59 @@
+mod MYTEST-BUILTINS is
+ including MYTEST-BASE .
+ eq '_==Bool_(_`(_`)(#_(GeneratedFreshVar4:#Bool), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar5:#Bool), .List{K}) ) = _`(_`)(# _==Bool_(GeneratedFreshVar4:#Bool , GeneratedFreshVar5:#Bool ), .List`{K`}) .
+ eq '~Int_(_`(_`)(#_(GeneratedFreshVar8:#Int), .List{K}) ) = _`(_`)(# ~Int_(GeneratedFreshVar8:#Int ), .List`{K`}) .
+eq '_^Int_(_`(_`)(#_(GeneratedFreshVar30:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar31:#Nat), .List{K}) ) = _`(_`)(# _^Int_(GeneratedFreshVar30:#Int , GeneratedFreshVar31:#Nat ), .List`{K`}) .
+ eq '_*Int_(_`(_`)(#_(GeneratedFreshVar9:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar10:#Int), .List{K}) ) = _`(_`)(# _*Int_(GeneratedFreshVar9:#Int , GeneratedFreshVar10:#Int ), .List`{K`}) .
+eq '_/Int_(_`(_`)(#_(GeneratedFreshVar30:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar31:#NzInt), .List{K}) ) = _`(_`)(# _/Int_(GeneratedFreshVar30:#Int , GeneratedFreshVar31:#NzInt ), .List`{K`}) .
+eq '_%Int_(_`(_`)(#_(GeneratedFreshVar30:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar31:#NzInt), .List{K}) ) = _`(_`)(# _%Int_(GeneratedFreshVar30:#Int , GeneratedFreshVar31:#NzInt ), .List`{K`}) .
+ eq '_+Int_(_`(_`)(#_(GeneratedFreshVar11:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar12:#Int), .List{K}) ) = _`(_`)(# _+Int_(GeneratedFreshVar11:#Int , GeneratedFreshVar12:#Int ), .List`{K`}) .
+ eq '_-Int_(_`(_`)(#_(GeneratedFreshVar13:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar14:#Int), .List{K}) ) = _`(_`)(# _-Int_(GeneratedFreshVar13:#Int , GeneratedFreshVar14:#Int ), .List`{K`}) .
+eq '_>>Int_(_`(_`)(#_(GeneratedFreshVar30:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar31:#Nat), .List{K}) ) = _`(_`)(# _>>Int_(GeneratedFreshVar30:#Int , GeneratedFreshVar31:#Nat ), .List`{K`}) .
+eq '_<<Int_(_`(_`)(#_(GeneratedFreshVar30:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar31:#Nat), .List{K}) ) = _`(_`)(# _<<Int_(GeneratedFreshVar30:#Int , GeneratedFreshVar31:#Nat ), .List`{K`}) .
+ eq '_&Int_(_`(_`)(#_(GeneratedFreshVar15:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar16:#Int), .List{K}) ) = _`(_`)(# _&Int_(GeneratedFreshVar15:#Int , GeneratedFreshVar16:#Int ), .List`{K`}) .
+ eq '_xorInt_(_`(_`)(#_(GeneratedFreshVar17:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar18:#Int), .List{K}) ) = _`(_`)(# _xorInt_(GeneratedFreshVar17:#Int , GeneratedFreshVar18:#Int ), .List`{K`}) .
+ eq '_|Int_(_`(_`)(#_(GeneratedFreshVar19:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar20:#Int), .List{K}) ) = _`(_`)(# _|Int_(GeneratedFreshVar19:#Int , GeneratedFreshVar20:#Int ), .List`{K`}) .
+ eq 'minInt`(_`,_`)(_`(_`)(#_(GeneratedFreshVar21:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar22:#Int), .List{K}) ) = _`(_`)(# minInt(GeneratedFreshVar21:#Int , GeneratedFreshVar22:#Int ), .List`{K`}) .
+ eq 'maxInt`(_`,_`)(_`(_`)(#_(GeneratedFreshVar23:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar24:#Int), .List{K}) ) = _`(_`)(# maxInt(GeneratedFreshVar23:#Int , GeneratedFreshVar24:#Int ), .List`{K`}) .
+ eq absInt(_`(_`)(#_(GeneratedFreshVar25:#Int), .List{K}) ) = _`(_`)(# absInt(GeneratedFreshVar25:#Int ), .List`{K`}) .
+ eq '_<=Int_(_`(_`)(#_(GeneratedFreshVar27:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar28:#Int), .List{K}) ) = _`(_`)(# _<=Int_(GeneratedFreshVar27:#Int , GeneratedFreshVar28:#Int ), .List`{K`}) .
+ eq '_<Int_(_`(_`)(#_(GeneratedFreshVar29:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar30:#Int), .List{K}) ) = _`(_`)(# _<Int_(GeneratedFreshVar29:#Int , GeneratedFreshVar30:#Int ), .List`{K`}) .
+ eq '_>=Int_(_`(_`)(#_(GeneratedFreshVar31:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar32:#Int), .List{K}) ) = _`(_`)(# _>=Int_(GeneratedFreshVar31:#Int , GeneratedFreshVar32:#Int ), .List`{K`}) .
+ eq '_>Int_(_`(_`)(#_(GeneratedFreshVar33:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar34:#Int), .List{K}) ) = _`(_`)(# _>Int_(GeneratedFreshVar33:#Int , GeneratedFreshVar34:#Int ), .List`{K`}) .
+ eq '_==Int_(_`(_`)(#_(GeneratedFreshVar35:#Int), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar36:#Int), .List{K}) ) = _`(_`)(# _==Int_(GeneratedFreshVar35:#Int , GeneratedFreshVar36:#Int ), .List`{K`}) .
+ceq '_^Float_(_`(_`)(#_(GeneratedFreshVar46:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar47:#Float), .List{K}) ) = _`(_`)(# _^Float_(GeneratedFreshVar46:#Float , GeneratedFreshVar47:#Float ), .List`{K`}) if GeneratedFreshVar46:#Float =/=Universal 0.0 or-else GeneratedFreshVar47:#Float >=Float 0.0 .
+ eq '_*Float_(_`(_`)(#_(GeneratedFreshVar42:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar43:#Float), .List{K}) ) = _`(_`)(# _*Float_(GeneratedFreshVar42:#Float , GeneratedFreshVar43:#Float ), .List`{K`}) .
+ceq '_/Float_(_`(_`)(#_(GeneratedFreshVar44:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar45:#Float), .List{K}) ) = _`(_`)(# _/Float_(GeneratedFreshVar44:#Float , GeneratedFreshVar45:#Float ), .List`{K`}) if GeneratedFreshVar45:#Float ==Float 0.0 = false .
+ceq '_%Float_(_`(_`)(#_(GeneratedFreshVar46:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar47:#Float), .List{K}) ) = _`(_`)(# _%Float_(GeneratedFreshVar46:#Float , GeneratedFreshVar47:#Float ), .List`{K`}) if GeneratedFreshVar47:#Float ==Float 0.0 = false .
+ eq '_+Float_(_`(_`)(#_(GeneratedFreshVar44:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar45:#Float), .List{K}) ) = _`(_`)(# _+Float_(GeneratedFreshVar44:#Float , GeneratedFreshVar45:#Float ), .List`{K`}) .
+ eq '_-Float_(_`(_`)(#_(GeneratedFreshVar46:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar47:#Float), .List{K}) ) = _`(_`)(# _-Float_(GeneratedFreshVar46:#Float , GeneratedFreshVar47:#Float ), .List`{K`}) .
+ eq '_<=Float_(_`(_`)(#_(GeneratedFreshVar49:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar50:#Float), .List{K}) ) = _`(_`)(# _<=Float_(GeneratedFreshVar49:#Float , GeneratedFreshVar50:#Float ), .List`{K`}) .
+ eq '_<Float_(_`(_`)(#_(GeneratedFreshVar51:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar52:#Float), .List{K}) ) = _`(_`)(# _<Float_(GeneratedFreshVar51:#Float , GeneratedFreshVar52:#Float ), .List`{K`}) .
+ eq '_>=Float_(_`(_`)(#_(GeneratedFreshVar53:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar54:#Float), .List{K}) ) = _`(_`)(# _>=Float_(GeneratedFreshVar53:#Float , GeneratedFreshVar54:#Float ), .List`{K`}) .
+ eq '_>Float_(_`(_`)(#_(GeneratedFreshVar55:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar56:#Float), .List{K}) ) = _`(_`)(# _>Float_(GeneratedFreshVar55:#Float , GeneratedFreshVar56:#Float ), .List`{K`}) .
+ eq '_==Float_(_`(_`)(#_(GeneratedFreshVar57:#Float), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar58:#Float), .List{K}) ) = _`(_`)(# _==Float_(GeneratedFreshVar57:#Float , GeneratedFreshVar58:#Float ), .List`{K`}) .
+ eq Int2Float(_`(_`)(#_(GeneratedFreshVar60:#Int), .List{K}) ) = _`(_`)(# int2Float(GeneratedFreshVar60:#Int ), .List`{K`}) .
+ eq Float2Int(_`(_`)(#_(GeneratedFreshVar62:#Float), .List{K}) ) = _`(_`)(# float2Int(GeneratedFreshVar62:#Float ), .List`{K`}) .
+ eq '_+String_(_`(_`)(#_(GeneratedFreshVar66:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar67:#String), .List{K}) ) = _`(_`)(# _+String_(GeneratedFreshVar66:#String , GeneratedFreshVar67:#String ), .List`{K`}) .
+ eq '_==String_(_`(_`)(#_(GeneratedFreshVar69:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar70:#String), .List{K}) ) = _`(_`)(# _==String_(GeneratedFreshVar69:#String , GeneratedFreshVar70:#String ), .List`{K`}) .
+ eq lengthString(_`(_`)(#_(GeneratedFreshVar72:#String), .List{K}) ) = _`(_`)(# lengthString(GeneratedFreshVar72:#String ), .List`{K`}) .
+ceq charString(_`(_`)(#_(GeneratedFreshVar86:#Nat), .List{K}) ) = _`(_`)(# charString(GeneratedFreshVar86:#Nat ), .List`{K`}) if GeneratedFreshVar86:#Nat <=Int 255 .
+eq asciiString(_`(_`)(#_(GeneratedFreshVar88:#Char), .List{K}) ) = _`(_`)(# asciiString(GeneratedFreshVar88:#Char ), .List`{K`}) .
+eq substrString(_`(_`)(#_(GeneratedFreshVar90:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar91:#Nat), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar92:#Nat), .List{K}) ) = _`(_`)(# substrString(GeneratedFreshVar90:#String , GeneratedFreshVar91:#Nat , GeneratedFreshVar92:#Nat ), .List`{K`}) .
+eq findString(_`(_`)(#_(GeneratedFreshVar94:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar95:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar96:#Nat), .List{K}) ) = _`(_`)(# findString(GeneratedFreshVar94:#String , GeneratedFreshVar95:#String , GeneratedFreshVar96:#Nat ), .List`{K`}) .
+eq rfindString(_`(_`)(#_(GeneratedFreshVar98:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar99:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar100:#Nat), .List{K}) ) = _`(_`)(# rfindString(GeneratedFreshVar98:#String , GeneratedFreshVar99:#String , GeneratedFreshVar100:#Nat ), .List`{K`}) .
+ eq Float2String(_`(_`)(#_(GeneratedFreshVar79:#Float), .List{K}) ) = _`(_`)(# float2String(GeneratedFreshVar79:#Float ), .List`{K`}) .
+ eq String2Float(_`(_`)(#_(GeneratedFreshVar81:#String), .List{K}) ) = _`(_`)(# string2Float(GeneratedFreshVar81:#String ), .List`{K`}) .
+ eq String2Int(_`(_`)(#_(GeneratedFreshVar83:#String), .List{K}) ) = _`(_`)(# string2Int(GeneratedFreshVar83:#String ), .List`{K`}) .
+ eq Int2String(_`(_`)(#_(GeneratedFreshVar85:#Int), .List{K}) ) = _`(_`)(# int2String(GeneratedFreshVar85:#Int ), .List`{K`}) .
+ eq Id2String(_`(_`)(#_(GeneratedFreshVar87:#Id), .List{K}) ) = _`(_`)(# id2String(GeneratedFreshVar87:#Id ), .List`{K`}) .
+ eq String2Id(_`(_`)(#_(GeneratedFreshVar89:#String), .List{K}) ) = _`(_`)(# string2Id(GeneratedFreshVar89:#String ), .List`{K`}) .
+ eq '_<String_(_`(_`)(#_(GeneratedFreshVar101:#String), .List{K}) ,, _`(_`)(#_(GeneratedFreshVar102:#String), .List{K}) ) = _`(_`)(# _<String_(GeneratedFreshVar101:#String , GeneratedFreshVar102:#String ), .List`{K`}) .
+eq '_==K_(GeneratedFreshVar132:K,, GeneratedFreshVar133:K)  = _`(_`)(# _==K_(GeneratedFreshVar132:K , GeneratedFreshVar133:K ), .List`{K`}) .
+ eq ##tcpRequest(_`(_`)(#_(GeneratedFreshVar126:#String), .List{K}) ) = _`(_`)(# #tcpRequest(GeneratedFreshVar126:#String ), .List`{K`}) .
+ eq #retrieveTCPError(_`(_`)(#_(GeneratedFreshVar127:#String), .List{K}) ) = _`(_`)(# #retrieveTCPError(GeneratedFreshVar127:#String ), .List`{K`}) .
+ eq #isTCPError(_`(_`)(#_(GeneratedFreshVar129:#String), .List{K}) ) = _`(_`)(# #isTCPError(GeneratedFreshVar129:#String ), .List`{K`}) .
+eq randomRandom(_`(_`)(#_(GeneratedFreshVar135:#Nat), .List{K}) ) = _`(_`)(# randomRandom(GeneratedFreshVar135:#Nat ), .List`{K`}) .
+ eq '#distinctCounter(_`(_`)(#_(GeneratedFreshVar132:#Int), .List{K}) ) = _`(_`)(# distinctCounter(GeneratedFreshVar132:#Int ), .List`{K`}) .
+ eq 'SMTCall`(_`)(_`(_`)(#_(GeneratedFreshVar218:#String), .List{K}) ) = _`(_`)(# #smtCall_(GeneratedFreshVar218:#String ), .List`{K`}) .
+endm

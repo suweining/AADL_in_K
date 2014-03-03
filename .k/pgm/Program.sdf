@@ -1,0 +1,161 @@
+module Program
+
+imports Common
+imports KBuiltinsBasic
+exports
+
+context-free syntax
+context-free syntax
+	NoneStatement -> RequirModeSubclause {}
+	NoneStatement -> ContainedPropertyAssoc {}
+	"requires data access" -> FeatureDdefFiness {cons("FeatureDdefFiness1446Syn")}
+	"store" "(" Array "," Int "," K ")" -> Array {cons("Array147Syn")}
+	RequirModeSubclause -> ModeDdefList {}
+	DzFloat -> Float {}
+	"processor" -> ComponentCategory {cons("ComponentCategory1427Syn")}
+	"subprogram" -> ComponentCategory {cons("ComponentCategory1425Syn")}
+	"out data port" -> FeatureDdefFiness {cons("FeatureDdefFiness1445Syn")}
+	"out port" -> FlowSpecDdefFiness {cons("FlowSpecDdefFiness1456Syn")}
+	"flows" NoneStatement -> FlowDdefList {cons("FlowDdefList1452Syn")}
+	"bus" -> ComponentCategory {cons("ComponentCategory1428Syn")}
+	"properties" ComponentTypePropertyDdef -> ProperTypeDdefList {cons("ProperTypeDdefList1457Syn")}
+	ComponentAssocDdef ComponentAssocDdef -> ComponentAssocDdef {cons("ComponentAssocDdef1433Syn")}
+	NoneStatement -> ComponentTypePropertyDdef {}
+	ComponentType ComponentType -> ComponentType {cons("ComponentType1420Syn")}
+	"properties" NoneStatement -> ProperTypeDdefList {cons("ProperTypeDdefList1458Syn")}
+	FeatureDdefList -> ComponentAssocDdef {}
+	"select" "(" Array "," Int ")" -> KResult {cons("KResult148Syn")}
+	FeatureDdef FeatureDdef -> FeatureDdef {cons("FeatureDdef1444Syn")}
+	Id "." Id -> Identifier {cons("Identifier1462Syn")}
+	FeatureDdefIdentifier ":" FeatureDdefFiness FeatureDdefIdentifier ";" -> FeatureDdef {cons("FeatureDdef1443Syn")}
+	DzId -> Id {}
+	"system" -> ComponentCategory {cons("ComponentCategory1430Syn")}
+	ComponentCategory ComponentTypeIdentifier ComponentAssocDdef "end" ComponentTypeIdentifier ";" -> ComponentType {cons("ComponentType1409Syn")}
+	FlowSpecDdefIdentifier ":" FlowSpecDdefFiness FlowSpecDdefIdentifier ";" -> FlowSpecDdef {cons("FlowSpecDdef1453Syn")}
+	"in data port prototype" -> FeatureDdefFiness {cons("FeatureDdefFiness1449Syn")}
+	NoneStatement -> AnnexSubDdefList {}
+	DzString -> String {}
+	NoneStatement -> AnnexSubclauseDdef {}
+	"process" -> ComponentCategory {cons("ComponentCategory1432Syn")}
+	ModeDdefList -> ComponentAssocDdef {}
+	Identifier -> FlowSpecDdefIdentifier {}
+	" " -> Identifier {cons("Identifier1463Syn")}
+	"out data port prototype" -> ProtoTypeFiness {cons("ProtoTypeFiness1439Syn")}
+	Identifier -> ProtoTypeDdefIdentifier {}
+	NoneStatement -> CompenentTypePropertyAssoc {}
+	Id -> Identifier {}
+	ContainedPropertyAssoc -> ComponentTypePropertyDdef {}
+	"device" -> ComponentCategory {cons("ComponentCategory1429Syn")}
+	"features" FeatureDdef -> FeatureDdefList {cons("FeatureDdefList1440Syn")}
+	"out data port prototype" -> FeatureDdefFiness {cons("FeatureDdefFiness1448Syn")}
+	DzBool -> Bool {}
+	Id "_" Id -> Identifier {cons("Identifier1460Syn")}
+	FlowDdefList -> ComponentAssocDdef {}
+	FlowSpecDdef FlowSpecDdef -> FlowSpecDdef {cons("FlowSpecDdef1454Syn")}
+	"memory" -> ComponentCategory {cons("ComponentCategory1426Syn")}
+	NoneStatement -> ModesSubclause {}
+	ModesSubclause -> ModeDdefList {}
+	ComponentTypePropertyDdef -> ComponentTypePropertyDdef {}
+	CompenentTypePropertyAssoc -> ComponentTypePropertyDdef {}
+	"thread group" -> ComponentCategory {cons("ComponentCategory1423Syn")}
+	AnnexSubclauseDdef -> ComponentAssocDdef {}
+	"in port" -> FlowSpecDdefFiness {cons("FlowSpecDdefFiness1455Syn")}
+	"prototypes" ProtoTypeDdef -> ProtoTypeDdefList {cons("ProtoTypeDdefList1434Syn")}
+	Identifier -> FeatureDdefIdentifier {}
+	"data" -> ProtoTypeFiness {cons("ProtoTypeFiness1438Syn")}
+	"prototypes" NoneStatement -> ProtoTypeDdefList {cons("ProtoTypeDdefList1435Syn")}
+	NoneStatement -> ComponentAssocDdef {}
+	DzInt -> Int {}
+	"flows" FlowSpecDdef -> FlowDdefList {cons("FlowDdefList1450Syn")}
+	Identifier -> ComponentTypeIdentifier {}
+	ProtoTypeDdefIdentifier ":" ProtoTypeFiness ProtoTypeDdefIdentifier ";" -> ProtoTypeDdef {cons("ProtoTypeDdef1436Syn")}
+	"features" NoneStatement -> FeatureDdefList {cons("FeatureDdefList1442Syn")}
+	" " -> NoneStatement {cons("NoneStatement1459Syn")}
+	ProtoTypeDdefList -> ComponentAssocDdef {}
+	ProtoTypeDdef ProtoTypeDdef -> ProtoTypeDdef {cons("ProtoTypeDdef1437Syn")}
+	"in data port" -> FeatureDdefFiness {cons("FeatureDdefFiness1447Syn")}
+	"data" -> ComponentCategory {cons("ComponentCategory1424Syn")}
+	ProperTypeDdefList -> ComponentAssocDdef {}
+	"thread" -> ComponentCategory {cons("ComponentCategory1422Syn")}
+
+
+	DzDzString		-> DzString	{cons("DzString1Const")}
+	DzDzInt		-> DzInt	{cons("DzInt1Const")}
+	DzDzId		-> DzId	{cons("DzId1Const")}
+	DzDzBool		-> DzBool	{cons("DzBool1Const")}
+	DzDzFloat		-> DzFloat	{cons("DzFloat1Const")}
+
+	DzDzINT		-> DzDzInt
+	DzDzID		-> DzDzId
+	DzDzSTRING	-> DzDzString
+	DzDzFLOAT	-> DzDzFloat
+
+
+%% start symbols subsorts
+	Bool		-> K
+	DzId		-> K
+	FlowSpecDdef		-> K
+	ComponentCategory		-> K
+	NoneStatement		-> K
+	Array		-> K
+	ComponentType		-> K
+	FeatureDdefIdentifier		-> K
+	DzFloat		-> K
+	DzString		-> K
+	DzInt		-> K
+	FlowSpecDdefFiness		-> K
+	ContainedPropertyAssoc		-> K
+	FeatureDdefFiness		-> K
+	CompenentTypePropertyAssoc		-> K
+	ProtoTypeFiness		-> K
+	Int		-> K
+	Identifier		-> K
+	DzBool		-> K
+	Float		-> K
+	ComponentTypeIdentifier		-> K
+	ModesSubclause		-> K
+	FeatureDdefList		-> K
+	ProperTypeDdefList		-> K
+	FeatureDdef		-> K
+	RequirModeSubclause		-> K
+	AnnexSubDdefList		-> K
+	FlowDdefList		-> K
+	ProtoTypeDdef		-> K
+	ComponentTypePropertyDdef		-> K
+	ProtoTypeDdefList		-> K
+	String		-> K
+	ComponentAssocDdef		-> K
+	ModeDdefList		-> K
+	Id		-> K
+	AnnexSubclauseDdef		-> K
+	FlowSpecDdefIdentifier		-> K
+	ProtoTypeDdefIdentifier		-> K
+lexical syntax
+	"true" -> DzDzBool
+	"false" -> DzDzBool
+
+
+	"bus" -> DzDzID {reject}
+	"store" -> DzDzID {reject}
+	"prototypes" -> DzDzID {reject}
+	"data" -> DzDzID {reject}
+	"subprogram" -> DzDzID {reject}
+	"thread" -> DzDzID {reject}
+	"features" -> DzDzID {reject}
+	"false" -> DzDzID {reject}
+	"processor" -> DzDzID {reject}
+	"end" -> DzDzID {reject}
+	"select" -> DzDzID {reject}
+	"true" -> DzDzID {reject}
+	"properties" -> DzDzID {reject}
+	"memory" -> DzDzID {reject}
+	"flows" -> DzDzID {reject}
+	"process" -> DzDzID {reject}
+	"system" -> DzDzID {reject}
+	"device" -> DzDzID {reject}
+
+lexical restrictions
+	%% follow restrictions
+
+context-free start-symbols
+	K

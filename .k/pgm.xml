@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><T>
+	<amb filename="example.aadl" loc="(1,1,26,2)">
+		<term cons="ComponentType1420Syn" filename="example.aadl" loc="(1,1,25,16)" sort="ComponentType">
+			<term cons="ComponentType1420Syn" filename="example.aadl" loc="(1,1,15,18)" sort="ComponentType">
+				<term cons="ComponentType1409Syn" filename="example.aadl" loc="(1,1,6,17)" sort="ComponentType">
+					<term cons="ComponentCategory1430Syn" filename="example.aadl" loc="(1,1,1,7)" sort="ComponentCategory">
+						
+					</term>
+					<const filename="example.aadl" loc="(1,8,1,18)" sort="#Id" value="FileSystem"/>
+					<term cons="FeatureDdefList1440Syn" filename="example.aadl" loc="(3,1,4,47)" sort="FeatureDefList">
+						<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(4,1,4,47)" sort="FeatureDef">
+							<const filename="example.aadl" loc="(4,1,4,5)" sort="#Id" value="root"/>
+							<term cons="FeatureDdefFiness1446Syn" filename="example.aadl" loc="(4,8,4,28)" sort="FeatureDefFiness">
+								
+							</term>
+							<term cons="Identifier1462Syn" filename="example.aadl" loc="(4,29,4,45)" sort="Identifier">
+								<const filename="example.aadl" loc="(4,29,4,38)" sort="#Id" value="Directory"/>
+								<const filename="example.aadl" loc="(4,39,4,45)" sort="#Id" value="hashed"/>
+								
+							</term>
+							
+						</term>
+						
+					</term>
+					<const filename="example.aadl" loc="(6,5,6,15)" sort="#Id" value="FileSystem"/>
+					
+				</term>
+				<term cons="ComponentType1409Syn" filename="example.aadl" loc="(9,1,15,18)" sort="ComponentType">
+					<term cons="ComponentCategory1432Syn" filename="example.aadl" loc="(9,1,9,8)" sort="ComponentCategory">
+						
+					</term>
+					<const filename="example.aadl" loc="(9,9,9,20)" sort="#Id" value="Application"/>
+					<term cons="FeatureDdefList1440Syn" filename="example.aadl" loc="(11,1,13,45)" sort="FeatureDefList">
+						<term cons="FeatureDdef1444Syn" filename="example.aadl" loc="(12,1,13,45)" sort="FeatureDef">
+							<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(12,1,12,38)" sort="FeatureDef">
+								<const filename="example.aadl" loc="(12,1,12,8)" sort="#Id" value="resualt"/>
+								<term cons="FeatureDdefFiness1445Syn" filename="example.aadl" loc="(12,11,12,24)" sort="FeatureDefFiness">
+									
+								</term>
+								<term cons="Identifier1460Syn" filename="example.aadl" loc="(12,25,12,36)" sort="Identifier">
+									<const filename="example.aadl" loc="(12,25,12,31)" sort="#Id" value="result"/>
+									<const filename="example.aadl" loc="(12,32,12,36)" sort="#Id" value="type"/>
+									
+								</term>
+								
+							</term>
+							<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(13,1,13,45)" sort="FeatureDef">
+								<const filename="example.aadl" loc="(13,1,13,5)" sort="#Id" value="home"/>
+								<term cons="FeatureDdefFiness1446Syn" filename="example.aadl" loc="(13,8,13,28)" sort="FeatureDefFiness">
+									
+								</term>
+								<term cons="Identifier1462Syn" filename="example.aadl" loc="(13,29,13,43)" sort="Identifier">
+									<const filename="example.aadl" loc="(13,29,13,38)" sort="#Id" value="Directory"/>
+									<const filename="example.aadl" loc="(13,39,13,43)" sort="#Id" value="hash"/>
+									
+								</term>
+								
+							</term>
+							
+						</term>
+						
+					</term>
+					<const filename="example.aadl" loc="(15,5,15,16)" sort="#Id" value="Application"/>
+					
+				</term>
+				
+			</term>
+			<term cons="ComponentType1409Syn" filename="example.aadl" loc="(17,1,25,16)" sort="ComponentType">
+				<term cons="ComponentCategory1422Syn" filename="example.aadl" loc="(17,1,17,7)" sort="ComponentCategory">
+					
+				</term>
+				<const filename="example.aadl" loc="(17,8,17,17)" sort="#Id" value="Calculate"/>
+				<term cons="ComponentAssocDdef1433Syn" filename="example.aadl" loc="(19,1,23,44)" sort="ComponentAssocDef">
+					<term cons="ProtoTypeDdefList1434Syn" filename="example.aadl" loc="(19,1,20,46)" sort="ProtoTypeDefList">
+						<term cons="ProtoTypeDdef1436Syn" filename="example.aadl" loc="(20,1,20,46)" sort="ProtoTypeDef">
+							<const filename="example.aadl" loc="(20,1,20,9)" sort="#Id" value="datatype"/>
+							<term cons="ProtoTypeFiness1439Syn" filename="example.aadl" loc="(20,12,20,35)" sort="ProtoTypeFiness">
+								
+							</term>
+							<const filename="example.aadl" loc="(20,37,20,45)" sort="#Id" value="datatype"/>
+							
+						</term>
+						
+					</term>
+					<term cons="FeatureDdefList1440Syn" filename="example.aadl" loc="(21,1,23,44)" sort="FeatureDefList">
+						<term cons="FeatureDdef1444Syn" filename="example.aadl" loc="(22,1,23,44)" sort="FeatureDef">
+							<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(22,1,22,42)" sort="FeatureDef">
+								<const filename="example.aadl" loc="(22,1,22,6)" sort="#Id" value="input"/>
+								<term cons="FeatureDdefFiness1449Syn" filename="example.aadl" loc="(22,9,22,31)" sort="FeatureDefFiness">
+									
+								</term>
+								<const filename="example.aadl" loc="(22,32,22,40)" sort="#Id" value="datatype"/>
+								
+							</term>
+							<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(23,1,23,44)" sort="FeatureDef">
+								<const filename="example.aadl" loc="(23,1,23,7)" sort="#Id" value="result"/>
+								<term cons="FeatureDdefFiness1448Syn" filename="example.aadl" loc="(23,10,23,33)" sort="FeatureDefFiness">
+									
+								</term>
+								<const filename="example.aadl" loc="(23,34,23,42)" sort="#Id" value="datatype"/>
+								
+							</term>
+							
+						</term>
+						
+					</term>
+					
+				</term>
+				<const filename="example.aadl" loc="(25,5,25,14)" sort="#Id" value="Calculate"/>
+				
+			</term>
+			
+		</term>
+		<term cons="ComponentType1420Syn" filename="example.aadl" loc="(1,1,25,16)" sort="ComponentType">
+			<term cons="ComponentType1409Syn" filename="example.aadl" loc="(1,1,6,17)" sort="ComponentType">
+				<term cons="ComponentCategory1430Syn" filename="example.aadl" loc="(1,1,1,7)" sort="ComponentCategory">
+					
+				</term>
+				<const filename="example.aadl" loc="(1,8,1,18)" sort="#Id" value="FileSystem"/>
+				<term cons="FeatureDdefList1440Syn" filename="example.aadl" loc="(3,1,4,47)" sort="FeatureDefList">
+					<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(4,1,4,47)" sort="FeatureDef">
+						<const filename="example.aadl" loc="(4,1,4,5)" sort="#Id" value="root"/>
+						<term cons="FeatureDdefFiness1446Syn" filename="example.aadl" loc="(4,8,4,28)" sort="FeatureDefFiness">
+							
+						</term>
+						<term cons="Identifier1462Syn" filename="example.aadl" loc="(4,29,4,45)" sort="Identifier">
+							<const filename="example.aadl" loc="(4,29,4,38)" sort="#Id" value="Directory"/>
+							<const filename="example.aadl" loc="(4,39,4,45)" sort="#Id" value="hashed"/>
+							
+						</term>
+						
+					</term>
+					
+				</term>
+				<const filename="example.aadl" loc="(6,5,6,15)" sort="#Id" value="FileSystem"/>
+				
+			</term>
+			<term cons="ComponentType1420Syn" filename="example.aadl" loc="(9,1,25,16)" sort="ComponentType">
+				<term cons="ComponentType1409Syn" filename="example.aadl" loc="(9,1,15,18)" sort="ComponentType">
+					<term cons="ComponentCategory1432Syn" filename="example.aadl" loc="(9,1,9,8)" sort="ComponentCategory">
+						
+					</term>
+					<const filename="example.aadl" loc="(9,9,9,20)" sort="#Id" value="Application"/>
+					<term cons="FeatureDdefList1440Syn" filename="example.aadl" loc="(11,1,13,45)" sort="FeatureDefList">
+						<term cons="FeatureDdef1444Syn" filename="example.aadl" loc="(12,1,13,45)" sort="FeatureDef">
+							<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(12,1,12,38)" sort="FeatureDef">
+								<const filename="example.aadl" loc="(12,1,12,8)" sort="#Id" value="resualt"/>
+								<term cons="FeatureDdefFiness1445Syn" filename="example.aadl" loc="(12,11,12,24)" sort="FeatureDefFiness">
+									
+								</term>
+								<term cons="Identifier1460Syn" filename="example.aadl" loc="(12,25,12,36)" sort="Identifier">
+									<const filename="example.aadl" loc="(12,25,12,31)" sort="#Id" value="result"/>
+									<const filename="example.aadl" loc="(12,32,12,36)" sort="#Id" value="type"/>
+									
+								</term>
+								
+							</term>
+							<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(13,1,13,45)" sort="FeatureDef">
+								<const filename="example.aadl" loc="(13,1,13,5)" sort="#Id" value="home"/>
+								<term cons="FeatureDdefFiness1446Syn" filename="example.aadl" loc="(13,8,13,28)" sort="FeatureDefFiness">
+									
+								</term>
+								<term cons="Identifier1462Syn" filename="example.aadl" loc="(13,29,13,43)" sort="Identifier">
+									<const filename="example.aadl" loc="(13,29,13,38)" sort="#Id" value="Directory"/>
+									<const filename="example.aadl" loc="(13,39,13,43)" sort="#Id" value="hash"/>
+									
+								</term>
+								
+							</term>
+							
+						</term>
+						
+					</term>
+					<const filename="example.aadl" loc="(15,5,15,16)" sort="#Id" value="Application"/>
+					
+				</term>
+				<term cons="ComponentType1409Syn" filename="example.aadl" loc="(17,1,25,16)" sort="ComponentType">
+					<term cons="ComponentCategory1422Syn" filename="example.aadl" loc="(17,1,17,7)" sort="ComponentCategory">
+						
+					</term>
+					<const filename="example.aadl" loc="(17,8,17,17)" sort="#Id" value="Calculate"/>
+					<term cons="ComponentAssocDdef1433Syn" filename="example.aadl" loc="(19,1,23,44)" sort="ComponentAssocDef">
+						<term cons="ProtoTypeDdefList1434Syn" filename="example.aadl" loc="(19,1,20,46)" sort="ProtoTypeDefList">
+							<term cons="ProtoTypeDdef1436Syn" filename="example.aadl" loc="(20,1,20,46)" sort="ProtoTypeDef">
+								<const filename="example.aadl" loc="(20,1,20,9)" sort="#Id" value="datatype"/>
+								<term cons="ProtoTypeFiness1439Syn" filename="example.aadl" loc="(20,12,20,35)" sort="ProtoTypeFiness">
+									
+								</term>
+								<const filename="example.aadl" loc="(20,37,20,45)" sort="#Id" value="datatype"/>
+								
+							</term>
+							
+						</term>
+						<term cons="FeatureDdefList1440Syn" filename="example.aadl" loc="(21,1,23,44)" sort="FeatureDefList">
+							<term cons="FeatureDdef1444Syn" filename="example.aadl" loc="(22,1,23,44)" sort="FeatureDef">
+								<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(22,1,22,42)" sort="FeatureDef">
+									<const filename="example.aadl" loc="(22,1,22,6)" sort="#Id" value="input"/>
+									<term cons="FeatureDdefFiness1449Syn" filename="example.aadl" loc="(22,9,22,31)" sort="FeatureDefFiness">
+										
+									</term>
+									<const filename="example.aadl" loc="(22,32,22,40)" sort="#Id" value="datatype"/>
+									
+								</term>
+								<term cons="FeatureDdef1443Syn" filename="example.aadl" loc="(23,1,23,44)" sort="FeatureDef">
+									<const filename="example.aadl" loc="(23,1,23,7)" sort="#Id" value="result"/>
+									<term cons="FeatureDdefFiness1448Syn" filename="example.aadl" loc="(23,10,23,33)" sort="FeatureDefFiness">
+										
+									</term>
+									<const filename="example.aadl" loc="(23,34,23,42)" sort="#Id" value="datatype"/>
+									
+								</term>
+								
+							</term>
+							
+						</term>
+						
+					</term>
+					<const filename="example.aadl" loc="(25,5,25,14)" sort="#Id" value="Calculate"/>
+					
+				</term>
+				
+			</term>
+			
+		</term>
+		
+	</amb>
+	
+</T>

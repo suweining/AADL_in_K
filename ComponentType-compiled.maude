@@ -1,0 +1,8 @@
+load "/home/k/shared/k/bin/maude/lib/k-prelude"
+load ".k/base.maude"
+load ".k/builtins.maude"
+mod COMPONENTTYPE is 
+  including COMPONENTTYPE-BASE .
+  including COMPONENTTYPE-BUILTINS .
+  including K-STRICTNESS-DEFAULTS .
+endm
