@@ -22,7 +22,6 @@ module COMPONENT-IMPLEMENTATION-SYNTAX
 								| "properties" ContainedPropertyAssociation
 								| "properties" NoneStatement
 								| AnnexSubclause
-			syntax ProtoTypeBindings ::= "not define"
 			syntax ProtoType ::= ProtoType ProtoType  // "+"
 			syntax ProtoType ::= "not define"
 			syntax Subcomponent ::= Subcomponent Subcomponent
