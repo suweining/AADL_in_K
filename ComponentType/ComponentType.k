@@ -36,10 +36,10 @@ module COMPONET-TYPE-SYNTAX
 		syntax PackageName ::= "from Package.k"
 	
 
-end COMPONET-TYPE-SYNTAX
+endmodule
 
 module COMPONETTYPE
 	
 	imports COMPONET-TYPE-SYNTAX
 
-end COMPONETTYPE;
+endmodule

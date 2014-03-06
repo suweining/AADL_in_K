@@ -1,4 +1,4 @@
-module AADL-COMPONET-TYPE-SYNTAX
+module COMPONET-TYPE-SYNTAX
 
 	syntax ComponentType ::= ComponentCategory ComponentTypeIdentifier ComponentAssocDefination "end" ComponentTypeIdentifier;
 		syntax ComponentCategory ::= AbstractComponentCategory | SoftwareCategory | ExecutionPlateformCategory | CompositeCategory
@@ -36,9 +36,10 @@ module AADL-COMPONET-TYPE-SYNTAX
 		syntax PackageName ::= "from Package.k"
 	
 
-end AADL-COMPONET-TYPE-SYNTAX
+end COMPONET-TYPE-SYNTAX
 
 module COMPONETTYPE
-
+	
+	imports COMPONET-TYPE-SYNTAX
 
 end COMPONETTYPE;
