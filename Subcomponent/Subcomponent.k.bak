@@ -7,24 +7,25 @@ module SUBCOMPONENT-SYNTAX
 						     | PrototypeIdentifier
 						     | ArrayDimensions ArrayelementImplementionList
 						     | ArrayDimensions
-						     | SubcomponentProtertyAssociation // +
-						     | ContainedPropertyAssociation // +
+						     | "{" SubcomponentProtertyAssociation "}" // +
+						     | "{" ContainedPropertyAssociation "}"// +
 						     | ComponentInModes 
 			syntax UniqueComponentClassReference ::= 
 			syntax ProtoTypeBindings ::= "not define"
 			syntax PrototypeIdentifier ::= "not define"
 			syntax ArrayDimensions ::= ArrayDimension // +
 				syntax ArrayDimension ::= ArrayDimension ArrayDimension 
-				syntax ArrayDimension ::= ArrayDimensionSize // [[...]]
-					syntax ArrayDimensionSize ::= Numeral | UniquePropertyConstantIdentifier  | UniquePropertyIdentifier
+				syntax ArrayDimension ::= "[" ArrayDimensionSize "]"// [[...]]
+					syntax ArrayDimensionSize ::= Numberal | UniquePropertyConstantIdentifier  | UniquePropertyIdentifier
 						syntax Numeral ::= "not define"
 						syntax UniquePropertyConstantIdentifier ::= "not define"
 						syntax UniquePropertyIdentifier ::= "not define"
-			syntax ArrayelementImplementionList ::= ArrayelementImplementionList "," ArrayelementImplementionList
-			syntax ArrayelementImplementionList ::= UniqueComponentImplementationReference PrototypeBindings
-							     |  UniqueComponentImplementationReference
-				syntax UniqueComponentImplementationReference ::= "not define"
-				syntax PrototypeBindings ::= "not define"				    
+			syntax ArrayelementImplementionList ::= "("ArrayelementImplementionListTmp")"
+							      | "("ArrayelementImplementionListTmp "," ArrayelementImplementionListTmp ")"
+				syntax ArrayelementImplementionListTmp ::= UniqueComponentImplementationReference PrototypeBindings
+								        |  UniqueComponentImplementationReference
+					syntax UniqueComponentImplementationReference ::= "not define"
+					syntax PrototypeBindings ::= "not define"				    
 			syntax SubcomponentProtertyAssociation ::= SubcomponentProtertyAssociation SubcomponentProtertyAssociation
 			syntax SubcomponentProtertyAssociation ::= 'not define'
 			syntax ContainedPropertyAssociation ::= ContainedPropertyAssociation ContainedPropertyAssociation

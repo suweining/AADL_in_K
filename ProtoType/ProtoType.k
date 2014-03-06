@@ -3,9 +3,10 @@ module PROTOTYPE-SYNTAX
 		syntax ProtoTypeIdentifier ::= Id | Id"."Id | Id "_" Id
 		syntax ProtoTypeAssocDefination ::= ComponentProtoType ProtoTypePropertyAssociation 
 						  | FeatureGroupTypeProtoType ProtoTypePropertyAssociation
-						  | FeatureProtoType ProtoTypePropertyAssociation 
+						  | "{" FeatureProtoType ProtoTypePropertyAssociation "}"
 			syntax ProtoTypePropertyAssociation ::= NoneStatement
 			syntax ProtoTypePropertyAssociation ::= "not define"
+			syntax ComponentProtoType ::= ComponentCategory UniqueComponentClassifierReference "[]" // i do not why "[]" is exist
 			syntax ComponentProtoType ::= ComponentCategory UniqueComponentClassifierReference // [[]] ?
 				syntax ComponentCategory ::=  "define in ComponentType.k"
 				syntax UniqueComponentClassifierReference ::= "not define"
@@ -18,8 +19,8 @@ module PROTOTYPE-SYNTAX
 				syntax UniqueComponentClassifierReference ::= "not define"
 				syntax UniqueComponentClassifierReference ::= NoneStatement // because of '[...]' ....this is not right
 	syntax ProtoTypeRefinement ::= ProtoTypeIdentifier ":" "refined " "to" ProtoTypeAssocDefination ";"
-	syntax ProtoTypeBindings ::= ProtoTypeBinding
-	syntax ProtoTypeBindings ::= ProtoTypeBindings "," ProtoTypeBindings
+	syntax ProtoTypeBindings ::= "(" ProtoTypeBinding ")"
+	syntax ProtoTypeBindings ::= "(" ProtoTypeBinding "," ProtoTypeBinding ")"
 		syntax ProtoTypeBinding ::= ProtoTypeIdentifier "=>" ComponentProtoTypeActual
 					 |  ProtoTypeIdentifier "=>" ComponentProtoTypeActualList
 					 |  ProtoTypeIdentifier "=>" FeatureGroupTypeProtoTypeActual
@@ -27,8 +28,8 @@ module PROTOTYPE-SYNTAX
 			syntax ComponentProtoTypeActual ::= ComponentCategory UniqueComponentClassifierReference ProtoTypeBindings
 							  | ComponentCategory UniqueComponentClassifierReference
 							  | ComponentCategory ProtoTypeIdentifier
-			syntax ComponentProtoTypeActualList ::= ComponentProtoTypeActual
-			syntax ComponentProtoTypeActualList ::= ComponentProtoTypeActualList "," ComponentProtoTypeActualList
+			syntax ComponentProtoTypeActualList ::= "(" ComponentProtoTypeActual ")"
+			syntax ComponentProtoTypeActualList ::= "(" ComponentProtoTypeActual "," ComponentProtoTypeActual ")"
 			syntax FeatureGroupTypeProtoTypeActual ::= "feature " "group" UniqueFeatureGroupTypeReference
 								|   "feature " "group" UniqueFeatureGroupTypeReference ProtoTypeBindings
 								|   "feature " "group" FeatureGroupTypeProtoTypeIdentifier

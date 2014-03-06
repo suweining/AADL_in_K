@@ -7,24 +7,25 @@ module SUBCOMPONENT-SYNTAX
 						     | PrototypeIdentifier
 						     | ArrayDimensions ArrayelementImplementionList
 						     | ArrayDimensions
-						     | SubcomponentProtertyAssociation // +
-						     | ContainedPropertyAssociation // +
+						     | "{" SubcomponentProtertyAssociation "}" // +
+						     | "{" ContainedPropertyAssociation "}"// +
 						     | ComponentInModes 
 			syntax UniqueComponentClassReference ::= 
 			syntax ProtoTypeBindings ::= "not define"
 			syntax PrototypeIdentifier ::= "not define"
 			syntax ArrayDimensions ::= ArrayDimension // +
 				syntax ArrayDimension ::= ArrayDimension ArrayDimension 
-				syntax ArrayDimension ::= ArrayDimensionSize // [[...]]
+				syntax ArrayDimension ::= "[" ArrayDimensionSize "]"// [[...]]
 					syntax ArrayDimensionSize ::= Numberal | UniquePropertyConstantIdentifier  | UniquePropertyIdentifier
 						syntax Numeral ::= "not define"
 						syntax UniquePropertyConstantIdentifier ::= "not define"
 						syntax UniquePropertyIdentifier ::= "not define"
-			syntax ArrayelementImplementionList ::= ArrayelementImplementionList "," ArrayelementImplementionList
-			syntax ArrayelementImplementionList ::= UniqueComponentImplementationReference PrototypeBindings
-							     |  UniqueComponentImplementationReference
-				syntax UniqueComponentImplementationReference ::= "not define"
-				syntax PrototypeBindings ::= "not define"				    
+			syntax ArrayelementImplementionList ::= "("ArrayelementImplementionListTmp")"
+							      | "("ArrayelementImplementionListTmp "," ArrayelementImplementionListTmp ")"
+				syntax ArrayelementImplementionListTmp ::= UniqueComponentImplementationReference PrototypeBindings
+								        |  UniqueComponentImplementationReference
+					syntax UniqueComponentImplementationReference ::= "not define"
+					syntax PrototypeBindings ::= "not define"				    
 			syntax SubcomponentProtertyAssociation ::= SubcomponentProtertyAssociation SubcomponentProtertyAssociation
 			syntax SubcomponentProtertyAssociation ::= 'not define'
 			syntax ContainedPropertyAssociation ::= ContainedPropertyAssociation ContainedPropertyAssociation
@@ -32,7 +33,8 @@ module SUBCOMPONENT-SYNTAX
 			syntax ComponentInModes ::= "not define"
 	syntax ArraySelectionName ::= Identifier ArraySelection
 		syntax Identifier ::= Id | Id"."Id | Id "_" Id 
-		syntax ArraySelection ::= SelectionRange | NoneStatement
+		syntax ArraySelection ::= ArraySelection ArraySelection // +
+		syntax ArraySelection ::= "[" SelectionRange "]"
 			syntax SelectionRange ::= Numberal | Numberal ".." Numberal
 		
 endmodule

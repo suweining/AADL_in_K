@@ -3,23 +3,24 @@ module PROTOTYPE-SYNTAX
 		syntax ProtoTypeIdentifier ::= Id | Id"."Id | Id "_" Id
 		syntax ProtoTypeAssocDefination ::= ComponentProtoType ProtoTypePropertyAssociation 
 						  | FeatureGroupTypeProtoType ProtoTypePropertyAssociation
-						  | FeatureProtoType ProtoTypePropertyAssociation 
+						  | "{" FeatureProtoType ProtoTypePropertyAssociation "}"
 			syntax ProtoTypePropertyAssociation ::= NoneStatement
 			syntax ProtoTypePropertyAssociation ::= "not define"
+			syntax ComponentProtoType ::= ComponentCategory UniqueComponentClassifierReference "[]" // i do not why "[]" is exist
 			syntax ComponentProtoType ::= ComponentCategory UniqueComponentClassifierReference // [[]] ?
 				syntax ComponentCategory ::=  "define in ComponentType.k"
-				syntax UniqueComponentClassifierReference ::= 
+				syntax UniqueComponentClassifierReference ::= "not define"
 				syntax UniqueComponentClassifierReference ::= NoneStatement // because of '[...]'
 			syntax FeatureGroupTypeProtoType ::= "feature" "group" | "feature" "group" UniqueFeatureGroupTypeReference
-				syntax UniqueFeatureGroupTypeReference ::= 
+				syntax UniqueFeatureGroupTypeReference ::= "not define"
 			syntax FeatureProtoType ::= "in" "feature" UniqueComponentClassifierReference
 						  | "out" "feature" UniqueComponentClassifierReference
 						  | "feature" UniqueComponentClassifierReference
-				syntax UniqueComponentClassifierReference ::= 
+				syntax UniqueComponentClassifierReference ::= "not define"
 				syntax UniqueComponentClassifierReference ::= NoneStatement // because of '[...]' ....this is not right
 	syntax ProtoTypeRefinement ::= ProtoTypeIdentifier ":" "refined " "to" ProtoTypeAssocDefination ";"
-	syntax ProtoTypeBindings ::= ProtoTypeBinding
-	syntax ProtoTypeBindings ::= ProtoTypeBindings "," ProtoTypeBindings
+	syntax ProtoTypeBindings ::= "(" ProtoTypeBinding ")"
+	syntax ProtoTypeBindings ::= "(" ProtoTypeBinding "," ProtoTypeBinding ")"
 		syntax ProtoTypeBinding ::= ProtoTypeIdentifier "=>" ComponentProtoTypeActual
 					 |  ProtoTypeIdentifier "=>" ComponentProtoTypeActualList
 					 |  ProtoTypeIdentifier "=>" FeatureGroupTypeProtoTypeActual
