@@ -1,0 +1,67 @@
+module FEATUREGROUPTYPE-SYNATX
+
+	syntax FeatureGroupType ::= "feature" "group" Identifier FeatureGroupTypeAssocDefination "end" Identifier ";"
+		syntax Identifier ::= Id | Id "." Id | Id "_" Id
+ 		syntax FeatureGroupTypeAssocDefination ::= ProtoTypeOfFeatureGroupType FeatureOfFeatureGroupType InverseOfFeatureGroupType PropertyOfFeatureGroupType AnnexOfFeatureGroupType
+			syntax ProtoTypeOfFeatureGroupType ::= "prototypes" ProtoTypeOfFeatureGroupTypeTmp 
+							    | NoneStatement
+				syntax ProtoTypeOfFeatureGroupTypeTmp ::= ProtoType
+								    | ProtoType ProtoTypeOfFeatureGroupTypeTmp 
+					syntax ProtoType ::= "not define"
+			syntax FeatureOfFeatureGroupType ::= "featrues" FeatureOfFeatureGroupTypeTmp
+							   |  NoneStatement
+				syntax FeatureOfFeatureGroupTypeTmp ::= Feature
+								     |  Feature FeatureOfFeatureGroupTypeTmp
+					syntax Feature ::= "not define"
+			syntax InverseOfFeatureGroupType ::= "inverse" "of" UniqueFeatureGroupTypeReference
+						          |   NoneStatement
+				syntax UniqueFeatureGroupTypeReference ::= FeatureGroupTypeReferenceIdentifier
+							|  PackageName "::" FeatureGroupTypeReferenceIdentifier
+					syntax PackageName ::= Id | Id "." Id | Id "_" Id
+					syntax FeatureGroupTypeReferenceIdentifier ::= "not define"
+			syntax PropertyOfFeatureGroupType ::= "properties" PropertyOfFeatureGroupTypeTmp
+				syntax PropertyOfFeatureGroupTypeTmp ::= FeatureGroupContainedPropertyAssociation
+								      |  FeatureGroupContainedPropertyAssociation PropertyOfFeatureGroupTypeTmp
+								      |  NoneStatement
+					syntax FeatureGroupContainedPropertyAssociation ::= 
+			syntax AnnexOfFeatureGroupType ::= "not define"
+	syntax FeatureGroupTypeExtension ::= "feature" "group" Identifier "extends" UniqueFeatureGroupTypeReference FeatureGroupTypeExtensionAssocDefination "end" Identifier ";"
+		syntax Identifier ::= Id | Id "." Id | Id "_" Id
+		
+		syntax FeatureGroupTypeExtensionAssocDefination ::= ProtoTypeBindings ProtoTypeOfFeatureGroupTypeExtension FeatureOfFeatureGroupTypeExtension InverseOfFeatureGroupTypeExtension PropertyOfFeatureGroupTypeExtension AnnexOfFeatureGroupTypeExtension 
+			syntax  ProtoTypeBindings ::= "not define"
+			syntax  ProtoTypeOfFeatureGroupTypeExtension ::=  "prototypes" ProtoTypeOfFeatureGroupTypeExtensionTmp
+				syntax ProtoTypeOfFeatureGroupTypeExtensionTmp ::= ProtoTypeList
+										|  ProtoTypeRefinementList
+										| NoneStatement
+					syntax ProtoTypeList ::= ProtoType | ProtoType ProtoTypeList
+					syntax ProtoTypeRefinementList ::= ProtoTypeRefinement | ProtoTypeRefinement ProtoTypeRefinementList
+						syntax ProtoTypeRefinement ::= "not define"
+			syntax  FeatureOfFeatureGroupTypeExtension ::= "features" FeatureOfFeatureGroupTypeExtensionTmp
+				syntax FeatureOfFeatureGroupTypeExtensionTmp ::= FeatureList | FeatureRinementList | NoneStatement
+					syntax FeatureList ::= Feature | Feature FeatureList
+					syntax FeatureRinementList ::= FeatureRinement | FeatureRinement FeatureRinementList
+						syntax Feature ::= "not define"
+						syntax FeatureRinement ::= "not define"
+			syntax  InverseOfFeatureGroupTypeExtension  ::= InverseOfFeatureGroupType // they have the same syntax
+			syntax  PropertyOfFeatureGroupTypeExtension ::= PropertyOfFeatureGroupType
+			syntax  AnnexOfFeatureGroupTypeExtension ::= "not define"
+
+	syntax FeatureGroupSpec ::= FeatureGroupIdentifier ":" FeatureGroupSpecAssocDefination 
+		syntax FeatureGroupIdentifier ::= "not define"
+		syntax FeatureGroupSpecAssocDefination ::= InOut "feature" "group" InverseOfUniqueProtoType
+			syntax InOut ::= "in" | "out" | NoneStatement
+			syntax InverseOfUniqueProtoType ::= "inverse" "of" UniqueFeatureGroupTypeReference
+							  | "inverse" "of" ProtoTypeIdentifier
+							  | UniqueFeatureGroupTypeReference
+							  | ProtoTypeIdentifier
+							  | NoneStatement
+				syntax ProtoTypeIdentifier ::= "not define"
+
+	syntax FeatureGroupRefinement ::= FeatureGroupIdentifier ":" "refined " "to" FeatureGroupSpecAssocDefination
+endmodule
+
+module FEATUREGROUPTYPE
+
+	imports FEATUREGROUPTYPE-SYNATX
+endmodule
