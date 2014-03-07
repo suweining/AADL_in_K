@@ -33,7 +33,8 @@ module SUBCOMPONENT-SYNTAX
 			syntax ComponentInModes ::= "not define"
 	syntax ArraySelectionName ::= Identifier ArraySelection
 		syntax Identifier ::= Id | Id"."Id | Id "_" Id 
-		syntax ArraySelection ::= SelectionRange | NoneStatement
+		syntax ArraySelection ::= ArraySelection ArraySelection // +
+		syntax ArraySelection ::= "[" SelectionRange "]"
 			syntax SelectionRange ::= Numberal | Numberal ".." Numberal
 		
 endmodule

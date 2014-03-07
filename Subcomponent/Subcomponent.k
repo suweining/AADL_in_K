@@ -13,7 +13,7 @@ module SUBCOMPONENT-SYNTAX
 			syntax UniqueComponentClassReference ::= 
 			syntax ProtoTypeBindings ::= "not define"
 			syntax PrototypeIdentifier ::= "not define"
-			syntax ArrayDimensions ::= ArrayDimension // +
+			syntax ArrayDimensions ::= ArrayDimension // + but in 8.0,it is just [ArrayDimension]...i think here should be change
 				syntax ArrayDimension ::= ArrayDimension ArrayDimension 
 				syntax ArrayDimension ::= "[" ArrayDimensionSize "]"// [[...]]
 					syntax ArrayDimensionSize ::= Numberal | UniquePropertyConstantIdentifier  | UniquePropertyIdentifier
