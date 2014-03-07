@@ -1,4 +1,5 @@
 module PORT-SYNTAX
+// 8.3
 	syntax PortSpec ::= PortIdentifer ":" "in" PortType
 			  | PortIdentifer ":" "out" PortType
 			  | PortIdentifer ":" "in " "out" PortType

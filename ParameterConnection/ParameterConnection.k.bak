@@ -1,0 +1,16 @@
+module PARAMTERCONNECTION-SYNTAX
+	
+	syntax ParamenterConnection ::= "parameter" SourceParameterReference DirectionalConnectionSymbol DestinationParameterReference
+		syntax SourceParameterReference ::= 
+		syntax DirectionalConnectionSymbol ::= 
+		syntax DestinationParameterReference ::= 
+
+	syntax ParamentConnectionRefinement ::= "paramenter"
+	syntax ParamenterReference ::= 
+endmodule
+
+module PARAMTERCONNECTION
+	
+	imports PARAMTERCONNECTION-SYNTAX
+
+endmodule

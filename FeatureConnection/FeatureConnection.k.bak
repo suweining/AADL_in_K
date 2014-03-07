@@ -1,0 +1,28 @@
+module FEATURECONNECTION-SYNTAX
+
+	syntax FeatureConnection ::= "feature " SourceFeatureReference ConnectionSymbol DestinationFeatureReference
+		syntax SourceFeatureReference ::= FeatureReference
+		syntax ConnectionSymbol ::= DirectionalConnectSymbol | BidirectionalConnectSymbol
+			syntax DirectionalConnectSymbol ::= "->"
+			syntax BidirectionalConnectSymbol ::= "<->"
+		syntax DestinationFeatureReference ::= FeatureReference
+
+	syntax FeatureReference ::= ComponentTypeFeatureIdentifier
+				  | ComponentTypeFeatureGroupIdentifier "." FeatureIdentifier
+				  | SubcomponentIdentifier "." FeatureIdentifier
+				  | SubprogramCallIdentifier "." FeatureIdentifier
+		syntax ComponentTypeFeatureIdentifier ::= "not define"
+		syntax ComponentTypeFeatureGroupIdentifier ::= "not define"
+		syntax FeatureIdentifier ::= "not define"
+		syntax SubcomponentIdentifier ::= "not define"
+		syntax SubprogramCallIdentifier ::= "not define"
+
+	syntax FeatureConnectionRefinement ::= "feature"
+
+endmodule
+
+module  FEATURECONNECTION
+
+	imports FEATURECONNECTION-SYNTAX
+
+endmodule
