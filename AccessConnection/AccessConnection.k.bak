@@ -1,0 +1,31 @@
+module ACCESSCONNECTION-SYNTAX
+
+	syntax AccessConnection ::= AccessConnectionKeyword "access " SourceAccessReference ConnectionSymbol DestinationAccessReference
+		syntax AccessConnectionKeyword ::= "bus " | "subprogram " | "subprogram ""group " | "data "
+		syntax SourceAccessReference ::= AccessReference
+		syntax DestinationAccessReference ::= AccessReference
+		syntax ConnectionSymbol ::= "not define"
+	
+	syntax AccessConnectionRefinement ::= AccessConnectionKeyword "access "
+	syntax AccessReference ::= RequiresAccessIdentifier
+				|  ProvidesAccessIdentifier
+				|  FeatureGroupIdentifier "." RequiresAccessIdentifier
+				|  FeatureGroupIdentifier "." ProvidesAccessIdentifier
+				|  SubcomponentIdentifier "." ProvidesAccessIdentifier
+				|  SubcomponentIdentifier "." RequiresAccessIdentifier
+				|  SubprogramCallIdentifier "." RequiresOrProvidesAccessIdentifier
+				|  SubcomponentIdentifier
+				|  "processor" "." ProvidesSubprogramAccessIdentifier
+		syntax RequiresAccessIdentifier ::= 
+		syntax ProvidesAccessIdentifier ::= 
+		syntax FeatureGroupIdentifier ::= 
+		syntax SubcomponentIdentifier ::= 
+		syntax SubprogramCallIdentifier ::= 
+		syntax RequiresOrProvidesAccessIdentifier ::= 
+		syntax ProvidesSubprogramAccessIdentifier ::= 
+endmodule
+
+module ACCESSCONNECTION
+	
+	imports ACCESSCONNECTION-SYNTAX
+endmodule

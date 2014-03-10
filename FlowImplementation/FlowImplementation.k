@@ -1,0 +1,45 @@
+module FLOWIMPLEMENT-SYNTAX 
+	
+	syntax FlowImplementation ::= FlowSourceSinkPathImplementAssociationDefination PropertyAssociationInModes ";"
+		syntax FlowSourceSinkPathImplementAssociationDefination ::= FlowSourceImplementation | FlowSinkImplementation | FlowPathImplementation
+			syntax FlowSourceImplementation ::= FlowIdentifier ":" "flow " "source " SubcompentConnectionAssocDefination OutFlowFeatureIdentifier
+				syntax FlowIdentifier ::= "not define"
+				syntax OutFlowFeatureIdentifier ::= "not define"
+				syntax SubcompentConnectionAssocDefination ::= NoneStatement
+									    |  SubcompenentFlowIdentifier "->" ConnectionIdentifier "->"
+								            |  SubcompentConnectionAssocDefination SubcompentConnectionAssocDefination
+					syntax SubcompenentFlowIdentifier ::= "not define"
+					syntax ConnectionIdentifier ::= "not define"
+					syntax SubcompentConnectionAssocDefination ::= "not define"
+					syntax NoneStatement ::= "not define"
+			syntax FlowSinkImplementation ::= FlowIdentifier ":" "flow ""sink "InFlowFeatureIdentifier ConnectionSubcompenentFlowAssociationDefination 
+				syntax InFlowFeatureIdentifier ::= "not define"
+				syntax ConnectionSubcompenentFlowAssociationDefination ::= NoneStatement 
+											|  "->" ConnectionIdentifier"->"SubcompenentFlowIdentifier
+											| ConnectionSubcompenentFlowAssociationDefination  ConnectionSubcompenentFlowAssociationDefination
+					                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    						|  ConnectionSubcompenentFlowAssociationDefination ConnectionSubcompenentFlowAssociationDefination
+			syntax FlowPathImplementation ::= FlowIdentifier ":" "flow ""path " InFlowFeatureIdentifier FlowPathImplementationDefault "->" OutFlowFeatureIdentifier
+				syntax FlowPathImplementationDefault ::= ConnectIdentifierSubcompenentFlowIdnetifierList "->" OutFlowFeatureIdentifier
+					syntax ConnectIdentifierSubcompenentFlowIdnetifierList ::= "->" ConnextionIdentifier "->" SubcomponentFlowIdentifier
+												|  ConnectIdentifierSubcompenentFlowIdnetifierList ConnectIdentifierSubcompenentFlowIdnetifierList
+						syntax ConnextionIdentifier ::= "not define"
+						syntax SubcomponentFlowIdentifier ::= DataCompenentReference | SubcomponentIdentifier | SubcomponentIdentifier "." FlowSpecIdentifier
+							syntax SubcomponentFlowIdentifier ::= "not define"
+							syntax SubcomponentIdentifier ::= "not define"
+							syntax DataCompenentReference ::= DataSubcomponentIdentifier | RequiresDataAccessIdentifier | ProvidesDataAccessIdentifier
+								syntax DataSubcomponentIdentifier ::= "not define"
+								syntax RequiresDataAccessIdentifier ::= "not define"
+								syntax ProvidesDataAccessIdentifier ::= "not define"
+		syntax PropertyAssociationInModes ::= "{"PropertyAssociationList"}" InModesAndTransitions
+						   |  "{"PropertyAssociationList"}"
+						   |  InModesAndTransitions
+			syntax InModesAndTransitions ::= "not define"
+			syntax PropertyAssociationList ::= PropertyAssociation | PropertyAssociation PropertyAssociationList
+				syntax PropertyAssociation ::= "not define"
+endmodule
+
+module FLOWIMPLEMENT
+
+	imports FLOWIMPLEMENT-SYNTAX 
+
+endmodule
