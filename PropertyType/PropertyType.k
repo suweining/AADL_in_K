@@ -1,0 +1,92 @@
+module PROPERTYTYPE-SYNTAX
+	
+	syntax PropertyTypeDeclaration ::= PropertyTypeIdentifier ":" "type " PropertyType ";"
+		syntax PropertyTypeIdentifier ::= "not define"
+		syntax PropertyType ::= "aadlboolen "
+				     |  "aadlstring "
+				     |  EnumerationType
+				     |  UnitsType
+				     |  NumberType
+				     |  RangeType
+				     |  ClassifierType
+				     |  ReferenceType
+				     |  RecordType
+			syntax EnumerationType ::= "enumeration""(" EnumerationLiteralIdentifierList ")"
+				syntax EnumerationLiteralIdentifierList ::= EnumerationLiteralIdentifier | EnumerationLiteralIdentifier "," EnumerationLiteralIdentifierList
+					syntax EnumerationLiteralIdentifier ::= "not define"
+			syntax UnitsType ::= "units" UnitsList
+				syntax UnitsList ::= "(" UnitIdentifier UnitIdentifierList ")"
+					syntax UnitIdentifier ::= "not define"
+					syntax UnitIdentifierList ::= NoneStatement
+								   |  "," UnitIdentifier "=>" UnitIdentifier "*" NumericLiteral 
+								   |   "," UnitIdentifier "=>" UnitIdentifier "*" NumericLiteral  UnitIdentifierList
+						syntax NumericLiteral ::= "not define"
+			syntax NumberType ::= RealInteger 
+					   |  RealInteger "units "  UnitsDesignator // i do not know is here the spares is needed
+				syntax RealInteger ::= "aadlreal " | "aadlinterger "
+						    |  "aadlreal " RealRange
+						    |  "aadlinterger " IntegerRange
+					syntax RealRange ::= RealLowerBound ".." RealUpperBound
+						syntax RealLowerBound ::= SignedAadlrealOrConstant
+						syntax RealUpperBound ::= SignedAadlrealOrConstant 
+							syntax SignedAadlrealOrConstant ::= SignedAddlreal
+											  | RealPropertyConstantTerm
+											  | Sign RealPropertyConstantTerm
+								syntax SignedAddlreal ::= Sign RealLiteral UnitIdentifier
+											  |  Sign RealLiteral
+											  |  RealLiteral UnitIdentifier
+											  |  RealLiteral 
+									syntax RealLiteral ::= "not define"
+									syntax UnitIdentifier ::= "not define"
+								syntax RealPropertyConstantTerm ::= "not define"
+								syntax Sign ::= "-" | "+"
+					syntax IntegerRange ::= IntegerLowerBound ".." IntegerUpperBound
+						syntax IntegerLowerBound ::= SignedAadlintegerOrConstant
+						syntax IntegerUpperBound ::= SignedAadlintegerOrConstant
+							syntax SignedAadlintegerOrConstant ::= SignedAddlinteger
+											  | IntegerPropertyConstantTerm
+											  | Sign IntegerPropertyConstantTerm
+								syntax SignedAddlinteger ::= Sign IntegerLiteral UnitIdentifier
+											  |  Sign IntegerLiteral
+											  |  IntegerLiteral UnitIdentifier
+											  |  IntegerLiteral 
+									syntax IntegerLiteral ::= "not define"
+									
+								syntax IntegerPropertyConstantTerm ::=  "not define"
+				syntax UnitsDesignator ::= UnitsUniquePropertyTypeIdentifier | UnitsList
+					syntax UnitsUniquePropertyTypeIdentifier ::= "not define"
+			syntax RangeType ::= "range ""of " NumberType
+					  |  "range ""of " NumberUniquePropertyTypeIdentifier
+				syntax NumberType ::= "not define"
+				syntax NumberUniquePropertyTypeIdentifier ::= "not define"
+	
+			syntax ClassifierType ::= "classifier " | "classifier""("ClassifierCategoryReferenceList")"
+				syntax ClassifierCategoryReferenceList ::= ClassifierCategoryReference
+									|  ClassifierCategoryReferenceList "," ClassifierCategoryReferenceList
+					syntax ClassifierCategoryReference ::= ClassifierQualifiedMetaModelIdentifier
+						syntax ClassifierQualifiedMetaModelIdentifier ::= QualifiedMetaModelIdentifier
+			syntax ReferenceType ::= "reference" | "reference " "(" ReferenceCategoryList ")"
+				syntax ReferenceCategoryList ::= ReferenceCategory | ReferenceCategoryList "," ReferenceCategoryList
+					syntax ReferenceCategory ::= NamedElementQualifiedMetaModelIdentifier
+						syntax NamedElementQualifiedMetaModelIdentifier ::= "not define"
+
+			syntax RecordType ::= "record""(" RecordFieldList ")"
+				syntax RecordFieldList ::= RecordField | RecordField RecordFieldList
+					syntax RecordField ::= FieldIdentifier ":" "list ""of " PropertyTypeDesignator ";"
+							     | FieldIdentifier ":" PropertyTypeDesignator ";"
+						syntax FieldIdentifier ::= "not define"
+						syntax PropertyTypeDesignator ::= UniquePropertyTypeIdentifier | PropertyType
+							syntax UniquePropertyTypeIdentifier ::= "not define"
+
+		syntax QualifiedMetaModelIdentifier ::= MetaModelClassIdentifier 
+						     |  "{" AnnexIdentifier "}**" MetaModelClassIdentifier
+			syntax MetaModelClassIdentifier ::= Identifier | Identifier MetaModelClassIdentifier
+				syntax Identifier ::= Id "." Id | Id "_" Id | Id
+			syntax AnnexIdentifier ::= "not define"
+endmodule
+
+module PROPERTYTYPE
+
+	imports PROPERTYTYPE-SYNTAX
+
+endmodule
