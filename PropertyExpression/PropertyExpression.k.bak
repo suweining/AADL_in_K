@@ -1,0 +1,70 @@
+module PROPERTYEXPRESSION-SYNTAX
+
+	syntax PropertyExpression ::= BooleanTerm 
+				   |  RealTerm
+				   |  IntergerTerm
+				   |  StringTerm
+				   |  EnumerationTerm
+				   |  UnitTerm
+				   |  RealRangeTerm
+				   |  IntegerRangeTerm
+				   |  PropertyTerm
+				   |  ComponentClassifierTerm 
+				   |  ReferenceTerm
+				   |  RecordTerm
+				   |  ComputedTerm
+		syntax BooleanTerm ::= BooleanValue
+				    |  BooleanPropertyConstantTerm
+				    |  "not "BooleanTerm
+				    |  BooleanTerm "and"BooleanTerm
+				    |  BooleanTerm "or"BooleanTerm
+			syntax BooleanValue ::= "true" | "false"
+		syntax RealTerm::= SignedAadlrealOrConstant
+			syntax SignedAadlrealOrConstant ::= 
+		syntax IntergerTerm ::= SignedAadlintegerOrConstant
+			syntax SignedAadlintegerOrConstant ::= 
+		syntax StringTerm ::= StringLiteral | StringPropertyConstantTerm
+			syntax StringLiteral ::= 
+			syntax StringPropertyConstantTerm ::= 
+		syntax EnumerationTerm ::= EnumerationIdentifier | EnumerationPropertyConstantTerm
+			syntax EnumerationIdentifier ::=
+			syntax EnumerationPropertyConstantTerm ::= 
+		syntax UnitTerm ::= UnitIdentifier | UnitPropertyConstantTerm
+			syntax UnitIdentifier ::= 
+			syntax UnitPropertyConstantTerm ::= 
+		syntax IntegerRangeTerm ::= IntegerTerm ".." IntegerTerm 
+				      |  IntegerTerm ".." IntegerTerm "delta" IntegerTerm
+				      |  IntegerRangePropertyConstantTerm
+			syntax IntegerRangePropertyConstantTerm ::= 
+		syntax RealRangeTerm ::= RealTerm ".." RealTerm
+					 |  RealTerm ".." RealTerm "delta" RealTerm
+					 |  RealRangePropertyConstantTerm
+			syntax RealRangePropertyConstantTerm ::= 
+		syntax PropertyTerm ::= PropertyNameIdentifier
+				      | PropertySetIdentifier "::" PropertyNameIdentifier
+			syntax PropertyNameIdentifier ::= 
+			syntax PropertySetIdentifier ::= 
+		syntax ComponentClassifierTerm ::= "classifier" "(" UniqueComponentTypeReference ")"
+						|  "classifier" "(" UniqueComponentImplementationReference ")"
+			syntax UniqueComponentTypeReference ::= 
+			syntax UniqueComponentImplementationReference ::= 
+		syntax ReferenceTerm ::= "reference" "(" ContainedModelElementPath ")"
+			syntax ContainedModelElementPath ::= 
+		syntax RecordTerm ::= "(" RecordFieldIdentifierIdentifierList ")"
+			syntax RecordFieldIdentifierIdentifierList ::= RecordFieldIdentifierIdentifier "=>" PropertyValue ";"
+								    |  RecordFieldIdentifierIdentifier "=>" PropertyValue ";" RecordFieldIdentifierIdentifierList 
+				syntax RecordFieldIdentifierIdentifier ::= 
+				syntax PropertyValue ::= 
+		syntax ComputedTerm ::= "compute" "(" FunctionIdentifier ")"
+			syntax FunctionIdentifier ::= 
+	syntax PropertyConstantTerm ::= PropertyConstantIdentifier 
+				     |  PropertySetIdentifier "::" PropertyConstantIdentifier
+		syntax PropertyConstantIdentifier ::= 
+				 
+
+endmodule
+
+module PROPERTYEXPRESSION
+
+	imports PROPERTYEXPRESSION-SYNTAX
+endmodule
