@@ -1,0 +1,60 @@
+
+/*
+//4.2 
+require "Package.k"
+
+//  4.3
+require "ComponentType.k"
+//4.4
+
+require "ComponentImplementation.k"
+
+// 4.5 
+
+require "Subcomponent.k"
+
+// 4.7
+
+require "ProtoType.k"
+
+
+//4.8 
+
+require "AnnexSubclauseLibrary.k"
+
+// 5.2
+require "SubprogramCall.k"
+*/
+// 8.0 error
+
+ require "FeatureShareAccess.k"
+
+// 8.1 
+
+require "AbstractFeature.k"
+
+
+// 8.2 error
+
+ require "FeatureGroupType.k"
+
+// 8.3 error
+// require "Port.k"
+
+module MERGER
+/*
+	imports  PACKAGE-SYNTAX
+	imports  COMPONENTTYPE-SYNTAX
+	imports  COMPONENTIMPLEMENTATION-SYNTAX
+	imports  SUBCOMPONENT-SYNTAX
+	imports  PROTOTYPE-SYNTAX
+	imports  ANNEXSUBCLAUSELIBRARY-SYNTAX
+	imports  SUBPROGRAMCALL-SYNTAX
+*/
+	imports  FEATURESHAREACCESS-SYNTAX
+
+endmodule
+
+
+
+
