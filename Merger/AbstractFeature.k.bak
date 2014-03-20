@@ -19,5 +19,5 @@ module ABSTRACTFEATURE-SYNTAX
 		syntax PortRefinement ::= "not define"
 //		syntax FeatureGroupRefinement ::= "not define"
 		syntax SubcomponentAccessRefinement ::= "not define"
-//		syntax ParameterRefinement ::= "not define"
+		syntax ParameterRefinement ::= "not define"
 endmodule
