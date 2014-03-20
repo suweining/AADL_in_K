@@ -1,0 +1,183 @@
+module Program
+
+imports Common
+imports KBuiltinsBasic
+exports
+
+context-free syntax
+context-free syntax
+	DdecimalRealLiteral -> RealLiteral {}
+	OtherControlCharacter -> Character {}
+	"E" Numberal -> Exponent {cons("Exponent1462Syn")}
+	UnderLine Ddigit -> DdigitList {cons("DdigitList1434Syn")}
+	"store" "(" Array "," Int "," K ")" -> Array {cons("Array147Syn")}
+	DzFloat -> Float {}
+	"E" Numberal -> PrositiveExponent {cons("PrositiveExponent1436Syn")}
+	Numeral PrositiveExponent -> DdecimalIntegerLiteral {cons("DdecimalIntegerLiteral1432Syn")}
+	Ddigit -> Numeral {}
+	Ddigit -> ExtendedDdigit {}
+	"not define" -> NonQuotationMarkGraphicCharacter {cons("NonQuotationMarkGraphicCharacter1467Syn")}
+	StringElementList StringElementList -> StringElementList {cons("StringElementList1465Syn")}
+	"-" NonEndOfLineCharacterList -> Comment {cons("Comment1468Syn")}
+	IdentifierLeter LetterOrDdigitList -> Identifier {cons("Identifier1426Syn")}
+	FormatEffector -> Character {}
+	UnderLine ExtendedDdigit -> ExtendedDdigitList {cons("ExtendedDdigitList1444Syn")}
+	"select" "(" Array "," Int ")" -> KResult {cons("KResult148Syn")}
+	Base "#" BasedNumberal "#" -> BasedIntegerLiteral {cons("BasedIntegerLiteral1439Syn")}
+	UnderLine LetterOrDdigit -> LetterOrDdigitList {cons("LetterOrDdigitList1428Syn")}
+	Ddigit -> LetterOrDdigit {}
+	DzId -> Id {}
+	LetterOrDdigit -> LetterOrDdigitList {}
+	NoneStatement -> LetterOrDdigitList {}
+	DzString -> String {}
+	"\"" "\"" -> StringElement {cons("StringElement1466Syn")}
+	"not define" -> FormatEffector {cons("FormatEffector1424Syn")}
+	StringElement -> StringElementList {}
+	SpaceCharacter -> GraphicCharacter {}
+	NoneStatement -> DdigitList {}
+	NonEndOfLineCharacter -> NonEndOfLineCharacterList {}
+	"not define" -> IdentifierLetter {cons("IdentifierLetter1409Syn")}
+	"none" -> NoneStatement {cons("NoneStatement1472Syn")}
+	"not define" -> Ddigit {cons("Ddigit1420Syn")}
+	IdentifierLetter -> LetterOrDdigit {}
+	BasedIntegerLiteral -> IntegerLiteral {}
+	ExtendedDdigit -> ExtendedDdigitList {}
+	Numeral -> DdecimalIntegerLiteral {}
+	"e" -> ExtendedDdigit {cons("ExtendedDdigit1457Syn")}
+	"d" -> ExtendedDdigit {cons("ExtendedDdigit1456Syn")}
+	"f" -> ExtendedDdigit {cons("ExtendedDdigit1458Syn")}
+	IntegerLiteral -> NumericLiteral {}
+	DdigitList DdigitList -> DdigitList {cons("DdigitList1435Syn")}
+	SpecialCharacter -> GraphicCharacter {}
+	DdecimalIntegerLiteral -> IntegerLiteral {}
+	NoneStatement -> NonEndOfLineCharacterList {}
+	"not define" -> Numberal {cons("Numberal1438Syn")}
+	NonEndOfLineCharacterList NonEndOfLineCharacterList -> NonEndOfLineCharacterList {cons("NonEndOfLineCharacterList1469Syn")}
+	NoneStatement -> StringElementList {}
+	RealLiteral -> NumericLiteral {}
+	"not define" -> NonEndOfLineCharacter {cons("NonEndOfLineCharacter1470Syn")}
+	"a" -> ExtendedDdigit {cons("ExtendedDdigit1453Syn")}
+	Numeral "." Numeral Exponent -> DdecimalRealLiteral {cons("DdecimalRealLiteral1460Syn")}
+	"c" -> ExtendedDdigit {cons("ExtendedDdigit1455Syn")}
+	"b" -> ExtendedDdigit {cons("ExtendedDdigit1454Syn")}
+	Ddigit Ddigit -> Base {cons("Base1442Syn")}
+	Ddigit DdigitList -> Numeral {cons("Numeral1433Syn")}
+	Base "#" BasedNumberal "#" PrositiveExponent -> BasedIntegerLiteral {cons("BasedIntegerLiteral1440Syn")}
+	DzBool -> Bool {}
+	"not define" -> UnderLine {cons("UnderLine1430Syn")}
+	"\"" StringElementList "\"" -> StringLiteral {cons("StringLiteral1464Syn")}
+	NoneStatement -> ExtendedDdigitList {}
+	Ddigit -> DdigitList {}
+	ExtendedDdigitList ExtendedDdigitList -> ExtendedDdigitList {cons("ExtendedDdigitList1445Syn")}
+	"not define" -> IdentifierLeter {cons("IdentifierLeter1427Syn")}
+	"F" -> ExtendedDdigit {cons("ExtendedDdigit1452Syn")}
+	"E" -> ExtendedDdigit {cons("ExtendedDdigit1450Syn")}
+	"D" -> ExtendedDdigit {cons("ExtendedDdigit1449Syn")}
+	"not define " -> OtherControlCharacter {cons("OtherControlCharacter1425Syn")}
+	"not define" -> SpaceCharacter {cons("SpaceCharacter1422Syn")}
+	"E" "+" Numberal -> PrositiveExponent {cons("PrositiveExponent1437Syn")}
+	LetterOrDdigitList LetterOrDdigitList -> LetterOrDdigitList {cons("LetterOrDdigitList1429Syn")}
+	Ddigit -> GraphicCharacter {}
+	NonQuotationMarkGraphicCharacter -> StringElement {}
+	"C" -> ExtendedDdigit {cons("ExtendedDdigit1448Syn")}
+	"not define" -> SpecialCharacter {cons("SpecialCharacter1423Syn")}
+	"B" -> ExtendedDdigit {cons("ExtendedDdigit1447Syn")}
+	"A" -> ExtendedDdigit {cons("ExtendedDdigit1446Syn")}
+	DzInt -> Int {}
+	"E" "+" Numberal -> Exponent {cons("Exponent1463Syn")}
+	Numeral "." Numeral -> DdecimalRealLiteral {cons("DdecimalRealLiteral1459Syn")}
+	GraphicCharacter -> Character {}
+	IdentifierLetter -> GraphicCharacter {}
+	" " -> NoneStatement {cons("NoneStatement1473Syn")}
+	ExtendedDdigit ExtendedDdigitList -> BasedNumberal {cons("BasedNumberal1443Syn")}
+	Ddigit -> Base {}
+
+
+	DzDzString		-> DzString	{cons("DzString1Const")}
+	DzDzInt		-> DzInt	{cons("DzInt1Const")}
+	DzDzId		-> DzId	{cons("DzId1Const")}
+	DzDzBool		-> DzBool	{cons("DzBool1Const")}
+	DzDzFloat		-> DzFloat	{cons("DzFloat1Const")}
+
+	DzDzINT		-> DzDzInt
+	DzDzID		-> DzDzId
+	DzDzSTRING	-> DzDzString
+	DzDzFLOAT	-> DzDzFloat
+
+
+%% start symbols subsorts
+	Base		-> K
+	Numeral		-> K
+	Bool		-> K
+	IdentifierLetter		-> K
+	OtherControlCharacter		-> K
+	NumericLiteral		-> K
+	DzId		-> K
+	LetterOrDdigit		-> K
+	NoneStatement		-> K
+	FormatEffector		-> K
+	Array		-> K
+	GraphicCharacter		-> K
+	DzFloat		-> K
+	DzString		-> K
+	Numberal		-> K
+	NonEndOfLineCharacterList		-> K
+	Exponent		-> K
+	StringElementList		-> K
+	DzInt		-> K
+	RealLiteral		-> K
+	DdecimalRealLiteral		-> K
+	Ddigit		-> K
+	DdecimalIntegerLiteral		-> K
+	PrositiveExponent		-> K
+	DdigitList		-> K
+	Int		-> K
+	Identifier		-> K
+	DzBool		-> K
+	BasedNumberal		-> K
+	SpaceCharacter		-> K
+	StringLiteral		-> K
+	Float		-> K
+	ExtendedDdigit		-> K
+	BasedIntegerLiteral		-> K
+	Comment		-> K
+	NonEndOfLineCharacter		-> K
+	StringElement		-> K
+	Character		-> K
+	NonQuotationMarkGraphicCharacter		-> K
+	ExtendedDdigitList		-> K
+	String		-> K
+	IntegerLiteral		-> K
+	IdentifierLeter		-> K
+	UnderLine		-> K
+	SpecialCharacter		-> K
+	Id		-> K
+	LetterOrDdigitList		-> K
+lexical syntax
+	"true" -> DzDzBool
+	"false" -> DzDzBool
+
+
+	"D" -> DzDzID {reject}
+	"E" -> DzDzID {reject}
+	"F" -> DzDzID {reject}
+	"store" -> DzDzID {reject}
+	"A" -> DzDzID {reject}
+	"B" -> DzDzID {reject}
+	"C" -> DzDzID {reject}
+	"none" -> DzDzID {reject}
+	"false" -> DzDzID {reject}
+	"f" -> DzDzID {reject}
+	"d" -> DzDzID {reject}
+	"e" -> DzDzID {reject}
+	"b" -> DzDzID {reject}
+	"c" -> DzDzID {reject}
+	"select" -> DzDzID {reject}
+	"a" -> DzDzID {reject}
+	"true" -> DzDzID {reject}
+
+lexical restrictions
+	%% follow restrictions
+
+context-free start-symbols
+	K

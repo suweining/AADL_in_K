@@ -1,0 +1,4 @@
+kvm$ kompile LexicalElement.k
+[Error] Critical: Parse error: Syntax error near unexpected character ':'
+        File: /home/k/shared/k/include/builtins/bool.k
+        Location: (26,22,26,22)
