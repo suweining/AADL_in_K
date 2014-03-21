@@ -1,5 +1,5 @@
 module ANNEXSUBCLAUSELIBRARY-SYNTAX
-// 4.8
+// 4.8 check
 	syntax AnnexSubclause ::= "annex" AnnexIdentifier AnnexSubclauseAssocDefination ";"
 		syntax AnnexIdentifier ::= Id | Id"."Id | Id"_"Id
 		syntax AnnexSubclauseAssocDefination ::= "{**" AnnexSpecificLanguageConstructs "**}" // **} i do not know
@@ -7,8 +7,7 @@ module ANNEXSUBCLAUSELIBRARY-SYNTAX
 						      |  "{**" AnnexSpecificLanguageConstructs "**}" InModes
 						      |  InModes
 			syntax AnnexSpecificLanguageConstructs ::= "not define"
-			syntax InModes ::= "not define"
-//			syntax NoneStatement ::= "none" | " "
+
 	
 	syntax AnnexLibrary ::= "annex" AnnexIdentifier AnnexLibraryAssocDefination ";"
 		syntax AnnexLibraryAssocDefination ::= "{**" AnnexSpecificReusableConstructs "**}"

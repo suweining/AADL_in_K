@@ -1,13 +1,12 @@
 module PROPERTYDEFINATION-SYNTAX
-
+// 11.1.2
 	syntax PropertyDefinationDeclaration ::= PropertyNameIdentifier ":" PropertyDefinationDeclarationAssocDefination ";"
-		syntax PropertyNameIdentifier ::= "not define"
+		syntax PropertyNameIdentifier ::= Id | Id "." Id | Id "_" Id
 		syntax PropertyDefinationDeclarationAssocDefination ::= "inherit " SingleValuedProperty "applies ""to " PropertyOwnerList 
 								     |  "inherit " MultiValuedProperty "applies ""to " PropertyOwnerList 
 								     |   SingleValuedProperty "applies ""to " PropertyOwnerList 
 								     |	 MultiValuedProperty "applies ""to " PropertyOwnerList 
 			syntax SingleValuedProperty ::= PropertyTypeDesignator | PropertyTypeDesignator "=>" DefaultPropertyExpression
-				syntax PropertyTypeDesignator ::= "not define"
 				syntax DefaultPropertyExpression ::= "not define"
 			syntax MultiValuedProperty ::= ListOf PropertyTypeDesignator "=>" DefaultPropertyListValue
 						    | ListOf PropertyTypeDesignator 
@@ -15,10 +14,7 @@ module PROPERTYDEFINATION-SYNTAX
 				syntax DefaultPropertyListValue ::= "not define"
 			syntax PropertyOwnerList ::= PropertyOwner | PropertyOwner "," PropertyOwnerList
 				syntax PropertyOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierReference
-//					syntax NamedElementQualifiedMetaModelIdentifier ::= "not define"
 					syntax UniqueClassifierReference ::= UniqueComponentClassifierReference | UniqueFeatureGroupTypeReference
-//						syntax UniqueComponentClassifierReference ::= "not define"
-//						syntax UniqueFeatureGroupTypeReference ::= "not define"
 
 
 endmodule

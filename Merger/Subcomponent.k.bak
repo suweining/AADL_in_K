@@ -1,5 +1,5 @@
 module SUBCOMPONENT-SYNTAX
-// 4.5 check
+// 4.5
 	syntax Subcomponent ::= SubcomponentIdentifier ":" ComponentCategory SubcomponentAssocDefination ";"
 		syntax SubcomponentIdentifier ::= Id | Id "." Id | Id "_" Id
 		syntax SubcomponentAssocDefination ::= UniqueComponentClassReference ProtoTypeBindings

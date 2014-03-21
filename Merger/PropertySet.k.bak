@@ -1,7 +1,6 @@
 module PROPERTYSET-SYNTAX
-
+// 11.1
 	syntax PropertySet ::= "property ""set " PropertySetIdentifier "is "PropertySetAssocDefination "end "PropertySetIdentifier";"
-		syntax PropertySetIdentifier ::= "not define"
 		syntax PropertySetAssocDefination ::= ImportDeclarationList PropertyTypeDeclarationList 
 						   |  ImportDeclarationList PropertyDefinitionDeclarationList
 						   |  ImportDeclarationList PropertyConstantList
@@ -17,11 +16,9 @@ module PROPERTYSET-SYNTAX
 			syntax PropertyConstantList ::= NoneStatement
 						     |  PropertyConstant
 						     |  PropertyConstantList PropertyConstantList
-				syntax ImportDeclaration ::= "not define"
-				syntax PropertyTypeDeclaration ::= "not define"
+
 				syntax PropertyDefinitionDeclaration ::= "not define"
-				syntax PropertyConstant ::= "not define"
-//	syntax NoneStatement ::= "none" | " "
+
 endmodule
 
 module PROPERTYSET

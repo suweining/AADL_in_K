@@ -1,5 +1,5 @@
 module PARAMETERCONNECTION-SYNTAX
-	
+// 9.3	check
 	syntax ParamenterConnection ::= "parameter" SourceParameterReference DirectionalConnectionSymbol DestinationParameterReference
 		syntax SourceParameterReference ::= "not define"
 		syntax DirectionalConnectionSymbol ::= "not define"
@@ -15,16 +15,12 @@ module PARAMETERCONNECTION-SYNTAX
 				    |  RequiresDataAccessIdentifier
 				    |  ComponentTypeFeatureGroupIdentifier "." ElementDataAccessIdentifier
 				    |  ComponentTypeFeatureFeatureGroupIdentifier "." ElementPortOrParameterIdentifier
-		syntax ComponentTypeParameterIdentifier ::= "not define"
-//		syntax DataSubcomponentIdentifier ::= "not define"
-//		syntax SubprogramCallIdentifier ::= "not define"
-//		syntax ParameterIdentifier ::= "not define"
-//		syntax ComponentTypePortIdentifier ::= "not define"
-		syntax RequiresDataAccessIdentifier ::= "not define"
-//		syntax ComponentTypeFeatureGroupIdentifier ::= "not define"
-//		syntax ElementDataAccessIdentifier ::= "not define"
-		syntax ComponentTypeFeatureFeatureGroupIdentifier ::= "not define"
-		syntax ElementPortOrParameterIdentifier ::= "not define"
+		
+		syntax ComponentTypeParameterIdentifier ::= Id | Id "." Id | Id "_" Id
+		syntax RequiresDataAccessIdentifier ::= Id | Id "." Id | Id "_" Id
+		syntax ComponentTypeFeatureFeatureGroupIdentifier ::= Id | Id "." Id | Id "_" Id
+		syntax ElementPortOrParameterIdentifier ::= Id | Id "." Id | Id "_" Id
+		
 endmodule
 
 module PARAMETERCONNECTION

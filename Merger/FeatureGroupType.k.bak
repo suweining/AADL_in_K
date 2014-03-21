@@ -29,6 +29,7 @@ module FEATUREGROUPTYPE-SYNATX
 										| NoneStatement
 					syntax ProtoTypeList ::= ProtoType | ProtoType ProtoTypeList
 					syntax ProtoTypeRefinementList ::= ProtoTypeRefinement | ProtoTypeRefinement ProtoTypeRefinementList
+					//	syntax ProtoTypeRefinement ::= "not define"
 			syntax  FeatureOfFeatureGroupTypeExtension ::= "features" FeatureOfFeatureGroupTypeExtensionTmp
 				syntax FeatureOfFeatureGroupTypeExtensionTmp ::= FeatureList | FeatureRinementList | NoneStatement
 					syntax FeatureList ::= Feature | Feature FeatureList
@@ -45,7 +46,8 @@ module FEATUREGROUPTYPE-SYNATX
 							  | UniqueFeatureGroupTypeReference
 							  | ProtoTypeIdentifier
 							  | NoneStatement
-		
+			//	syntax ProtoTypeIdentifier ::= "not define"
+
 	syntax FeatureGroupRefinement ::= FeatureGroupIdentifier ":" "refined " "to" FeatureGroupSpecAssocDefination
 
 endmodule

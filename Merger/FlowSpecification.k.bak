@@ -1,17 +1,15 @@
 module FLOWSPECIFICATION-SYNTAX
-
+// 10.1
 	syntax FlowSpec ::= FlowSourceSpec | FlowSinkSpec | FlowPathSpec 
 		syntax FlowSourceSpec ::=  FlowIdentifier ":" "flow " "source " OutFlowFeatureIdentifier FlowSourceSpecAssocDefination ";"
-			syntax FlowIdentifier ::= "not define"
-			syntax OutFlowFeatureIdentifier ::= "not define"
+			syntax FlowIdentifier ::= Id | Id "." Id | Id "_" Id
+			syntax OutFlowFeatureIdentifier ::=  Id | Id "." Id | Id "_" Id
 			syntax FlowSourceSpecAssocDefination ::= "{" PropertyAssociationList "}" InModes ";"
 							      | "{"PropertyAssociationList "}" ";"
 							      | InModes ";"
-//				syntax InModes ::= "not define"
-//				syntax PropertyAssociationList ::= PropertyAssociation | PropertyAssociation PropertyAssociationList
-//					syntax PropertyAssociation ::= "not define"
+
 		syntax FlowSinkSpec ::= FlowIdentifier ":" "flow ""sink " InFlowFeatureIdentifier FlowSinkSpecAssocDefination ";"
-			syntax InFlowFeatureIdentifier ::= "not define"
+			syntax InFlowFeatureIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax FlowSinkSpecAssocDefination ::= FlowSourceSpecAssocDefination
 		
 		syntax FlowPathSpec ::= FlowIdentifier ":" "flow " "path " InFlowFeatureIdentifier "->" OutFlowFeatureIdentifier  FlowPathSpecAssocDefination ";"
@@ -22,7 +20,7 @@ module FLOWSPECIFICATION-SYNTAX
 			syntax FlowSourceSpecRefinementAssocDefination ::= "{" PropertyAssociationList "}" InModesAndTransitions 
 									|  "{" PropertyAssociationList "}" 
 									|   InModesAndTransitions
-				syntax InModesAndTransitions ::= "not define"
+//				syntax InModesAndTransitions ::= "not define"
 		syntax FlowSinkSpecRefinement ::=  FlowIdentifier ":" "refined ""to ""flow ""sink "  FlowSinkSpecRefinementAssocDefination ";"
 			syntax FlowSinkSpecRefinementAssocDefination ::= FlowSourceSpecRefinementAssocDefination
 
@@ -32,8 +30,6 @@ module FLOWSPECIFICATION-SYNTAX
 		syntax FlowFeatureIdentifer ::= FeatureIdentifier | FeatureGroupIdentifier
 					     |  FeatureGroupIdentifier "." FeatureIdentifier
 					     |  FeatureGroupIdentifier "." FeatureGroupIdentifier
-//			syntax FeatureIdentifier ::= "not define"
-			syntax FeatureGroupIdentifier ::= "not define"
 
 
 endmodule

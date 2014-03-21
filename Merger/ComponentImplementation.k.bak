@@ -1,5 +1,5 @@
 module COMPONENTIMPLEMENTATION-SYNTAX
-// 4.4 check
+// 4.4
 	syntax ComponentImplementation ::= ComponentCategory "implementation" ComponentImplementationName ComponentImplementationAssocDefination "end" ComponentImplementationName ";"
 		syntax ComponentImplementationName ::= ComponentTypeIdentifier"."ComponentImplementationIdentifier
 		syntax ComponentImplementationIdentifier ::= Id | Id"."Id | Id"_"Id

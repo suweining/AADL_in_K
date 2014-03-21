@@ -1,5 +1,5 @@
 module PROPERTYASSOCIATION-SYNTAX
-
+// 11.3 check
 	syntax PropertyAssociation ::= UniquePropertyIdentifier "=>" "constant" Assignment InBinding ";"
 				    |  UniquePropertyIdentifier "=>" "constant" Assignment  ";"
 				    |  UniquePropertyIdentifier "=>"  Assignment InBinding ";"
@@ -7,8 +7,6 @@ module PROPERTYASSOCIATION-SYNTAX
 				    |  UniquePropertyIdentifier "+=>" "constant" Assignment  ";"
 				    |  UniquePropertyIdentifier "+=>"  Assignment InBinding ";"
 		syntax UniquePropertyIdentifier ::=  PropertySetIdentifier "::" PropertyNameIdentifier 
-//			syntax PropertySetIdentifier ::= "not define"
-//			syntax PropertyNameIdentifier ::= "not define"
 		syntax Assignment ::= PropertyValue | ModalPropertyValue
 			syntax PropertyValue ::= SinglePropertyValue  |  PropertyListValue
 				syntax SinglePropertyValue ::= PropertyExpression
@@ -18,7 +16,6 @@ module PROPERTYASSOCIATION-SYNTAX
 							  | PropertyListValue "," PropertyListValue
 
 			syntax ModalPropertyValue ::= PropertyValue InModes |  PropertyValue InModes "," ModalPropertyValue 
-//				syntax InModes ::= "not define"
 		syntax InBinding ::= "in ""binding " PlatformClassifierReferenceList 
 			syntax PlatformClassifierReferenceList ::= PlatformClassifierReference | PlatformClassifierReference "," PlatformClassifierReferenceList
 				syntax PlatformClassifierReference ::= ProcessorUniqueComponentClassifierReference
@@ -28,7 +25,6 @@ module PROPERTYASSOCIATION-SYNTAX
 								    |  MemoryUniqueComponentClassifierReference
 					syntax ProcessorUniqueComponentClassifierReference ::= "not define"
 					syntax VirtualProcessorUniqueComponentClassifierReference ::= "not define"
-//					syntax BusUniqueComponentClassifierReference ::= "not define"
 					syntax VirtualBusUniqueComponentClassifierReference ::= "not define"
 					syntax MemoryUniqueComponentClassifierReference ::= "not define"
 	syntax ContainedPropertyAssociation ::= UniquePropertyIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
@@ -38,13 +34,11 @@ module PROPERTYASSOCIATION-SYNTAX
 							  |  ContainedModelElementList AnnexPath
 							  |  ContainedModelElementList
 				syntax AnnexPath ::= "annex " AnnexIdentifier "{**" AnnexSpecificPath "**}"
-//					syntax AnnexIdentifier ::= "not define"
 					syntax AnnexSpecificPath ::= "defined by annex"
 				syntax ContainedModelElementList ::= ContainedModelElement | ContainedModelElement "." ContainedModelElementList
 					syntax ContainedModelElement ::=  NamedElementIdentifier | NamedElementArraySelectionName
-						syntax NamedElementIdentifier ::= "not define"
+						syntax NamedElementIdentifier ::= Id | Id "." Id | Id "_" Id
 						syntax NamedElementArraySelectionName ::= "not define"
-//	syntax NoneStatement ::= "none" | " "
 endmodule
 
 module PROPERTYASSOCIATION

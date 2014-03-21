@@ -1,5 +1,5 @@
 module ABSTRACTFEATURE-SYNTAX
-
+// 8.1 check
 	syntax AbstractFeatureSpec ::= AbstractFeatureIdentifier ":" "in" "feature" FeatureProtoTypeIdentifier
 				    |  AbstractFeatureIdentifier ":" "in" "feature" 
 				    |  AbstractFeatureIdentifier ":" "out" "feature" FeatureProtoTypeIdentifier
@@ -10,14 +10,8 @@ module ABSTRACTFEATURE-SYNTAX
 					  |  FeatureGroupRefinement
 					  |  SubcomponentAccessRefinement
 					  |  ParameterRefinement
-					  |  AbstractFeatureIndentifier ":" "refined" "to" "in" "feature" FeatureProtoTypeIdentifier
-					  |  AbstractFeatureIndentifier ":" "refined" "to" "in" "feature" 
-					  |  AbstractFeatureIndentifier ":" "refined" "to" "out" "feature" FeatureProtoTypeIdentifier
-					  |  AbstractFeatureIndentifier ":" "refined" "to" "out" "feature" 
-//		syntax FeatureProtoTypeIdentifier ::= "not define"
-		syntax AbstractFeatureIndentifier ::= "not define"
-		syntax PortRefinement ::= "not define"
-//		syntax FeatureGroupRefinement ::= "not define"
-		syntax SubcomponentAccessRefinement ::= "not define"
-//		syntax ParameterRefinement ::= "not define"
+					  |  AbstractFeatureIdentifier ":" "refined" "to" "in" "feature" FeatureProtoTypeIdentifier
+					  |  AbstractFeatureIdentifier ":" "refined" "to" "in" "feature" 
+					  |  AbstractFeatureIdentifier ":" "refined" "to" "out" "feature" FeatureProtoTypeIdentifier
+					  |  AbstractFeatureIdentifier ":" "refined" "to" "out" "feature" 
 endmodule

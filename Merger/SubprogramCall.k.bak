@@ -1,5 +1,5 @@
 module SUBPROGRAMCALL-SYNTAX
-// 5.2 check
+// 5.2
 	syntax SubprogramCallSequence ::= CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" InModes ";"
 				       |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePropertyAssociation /* + */ "}" InModes ";"
 		syntax CallSequenceIdentifier ::= Id | Id"."Id | Id "_" Id
@@ -29,6 +29,6 @@ module SUBPROGRAMCALL-SYNTAX
 				syntax SubprogramGoupSubcomponentIdentifier ::=  Id | Id "." Id | Id "_" Id
 				syntax RequiresSubprogramGroupAccessIdentifier ::=  Id | Id "." Id | Id "_" Id
 			syntax CallSequencePropertyAssociation ::= CallSequencePropertyAssociation CallSequencePropertyAssociation // +
-
+//			syntax CallSequencePropertyAssociation ::= "not define"
 
 endmodule

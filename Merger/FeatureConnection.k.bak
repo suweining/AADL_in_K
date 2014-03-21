@@ -1,5 +1,5 @@
 module FEATURECONNECTION-SYNTAX
-// 9.1 check
+// 9.1
 	syntax FeatureConnection ::= "feature " SourceFeatureReference ConnectionSymbol DestinationFeatureReference
 		syntax SourceFeatureReference ::= FeatureReference
 		syntax ConnectionSymbol ::= DirectionalConnectSymbol | BidirectionalConnectSymbol

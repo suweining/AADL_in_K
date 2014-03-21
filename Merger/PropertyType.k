@@ -1,7 +1,7 @@
 module PROPERTYTYPE-SYNTAX
-	
+// 11.1.1	check
 	syntax PropertyTypeDeclaration ::= PropertyTypeIdentifier ":" "type " PropertyType ";"
-		syntax PropertyTypeIdentifier ::= "not define"
+		syntax PropertyTypeIdentifier ::= Id | Id "." Id | Id "_" Id
 		syntax PropertyType ::= "aadlboolen "
 				     |  "aadlstring "
 				     |  EnumerationType
@@ -13,7 +13,7 @@ module PROPERTYTYPE-SYNTAX
 				     |  RecordType
 			syntax EnumerationType ::= "enumeration""(" EnumerationLiteralIdentifierList ")"
 				syntax EnumerationLiteralIdentifierList ::= EnumerationLiteralIdentifier | EnumerationLiteralIdentifier "," EnumerationLiteralIdentifierList
-					syntax EnumerationLiteralIdentifier ::= "not define"
+					syntax EnumerationLiteralIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax UnitsType ::= "units" UnitsList
 				syntax UnitsList ::= "(" UnitIdentifier UnitIdentifierList ")"
 					syntax UnitIdentifier ::= "not define"
@@ -53,11 +53,10 @@ module PROPERTYTYPE-SYNTAX
 									
 								syntax IntegerPropertyConstantTerm ::=  "not define"
 				syntax UnitsDesignator ::= UnitsUniquePropertyTypeIdentifier | UnitsList
-					syntax UnitsUniquePropertyTypeIdentifier ::= "not define"
+					syntax UnitsUniquePropertyTypeIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax RangeType ::= "range ""of " NumberType
 					  |  "range ""of " NumberUniquePropertyTypeIdentifier
-				syntax NumberType ::= "not define"
-				syntax NumberUniquePropertyTypeIdentifier ::= "not define"
+				syntax NumberUniquePropertyTypeIdentifier ::= Id | Id "." Id | Id "_" Id
 	
 			syntax ClassifierType ::= "classifier " | "classifier""("ClassifierCategoryReferenceList")"
 				syntax ClassifierCategoryReferenceList ::= ClassifierCategoryReference
@@ -80,10 +79,8 @@ module PROPERTYTYPE-SYNTAX
 		syntax QualifiedMetaModelIdentifier ::= MetaModelClassIdentifier 
 						     |  "{" AnnexIdentifier "}**" MetaModelClassIdentifier
 			syntax MetaModelClassIdentifier ::= Identifier | Identifier MetaModelClassIdentifier
-//				syntax Identifier ::= Id "." Id | Id "_" Id | Id
-			syntax AnnexIdentifier ::= "not define"
+//			syntax AnnexIdentifier ::= "not define"
 
-//	syntax NoneStatement ::= "not define"
 endmodule
 
 module PROPERTYTYPE
