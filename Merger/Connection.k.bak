@@ -1,5 +1,5 @@
 module CONNECTION-SYNTAX
-// 9.0
+// 9.0  check
 	syntax Connection ::= ConnectionIdentifier ":" SomeConnections PropertyInMode ";"
 		syntax ConnectionIdentifier ::= "not define"
 		syntax SomeConnections ::= FeatureConnection 
@@ -8,13 +8,13 @@ module CONNECTION-SYNTAX
 					|  AccessConnection
 					|  FeatureGroupConnection
 
-			syntax ParameterConnection ::= "not define"
+		//	syntax ParameterConnection ::= "not define"
 
-		syntax PropertyInMode ::= "{" PropertyAssociationList "}" InModesAndTranstitions
+		syntax PropertyInMode ::= "{" PropertyAssociationList "}" InModesAndTransititions
 					| "{" PropertyAssociationList "}"
-					| InModesAndTranstitions
+					| InModesAndTransititions
 					| NoneStatement
-			syntax InModesAndTranstitions ::= "not define"
+			syntax InModesAndTransititions ::= "not define"
 			syntax PropertyAssociationList ::= PropertyAssociation | PropertyAssociation PropertyAssociationList
 
 	syntax ConnectionRefinement ::= ConnectionIdentifier ":" "refined ""to " SomeRefinements PropertyInMode ";"
@@ -24,7 +24,7 @@ module CONNECTION-SYNTAX
 					|  AccessConnectionRefinement
 					|  FeatureGroupConnectionRefinement
 
-			syntax ParameterConnectionRefinement ::= "not define"
+		//	syntax ParameterConnectionRefinement ::= "not define"
 
 	
 endmodule

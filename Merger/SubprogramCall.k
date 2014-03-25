@@ -3,9 +3,8 @@ module SUBPROGRAMCALL-SYNTAX
 	syntax SubprogramCallSequence ::= CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" InModes ";"
 				       |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePropertyAssociation /* + */ "}" InModes ";"
 		syntax CallSequenceIdentifier ::= Id | Id"."Id | Id "_" Id
-		syntax SubprogramCall ::= CallIdentifier ":" Subprogram CalledSubprogram ";"
-		syntax SubprogramCall ::= CallIdentifier ":" Subprogram CalledSubprogram "{" CallSequencePropertyAssociation /* + */"}"";"
-			syntax Subprogram ::= "not define"
+		syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram ";"
+		syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram "{" CallSequencePropertyAssociation /* + */"}"";"
 			syntax CallIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax CalledSubprogram ::= SubprogramUniqueComponentClassifierReference
 						  | DataUniqueComponentTypeReference "." DataProvidesSubprogramAccessIdentifier

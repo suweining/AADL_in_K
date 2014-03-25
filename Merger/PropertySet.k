@@ -17,8 +17,6 @@ module PROPERTYSET-SYNTAX
 						     |  PropertyConstant
 						     |  PropertyConstantList PropertyConstantList
 
-				syntax PropertyDefinitionDeclaration ::= "not define"
-
 endmodule
 
 module PROPERTYSET

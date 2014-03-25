@@ -1,12 +1,12 @@
 module PARAMETERCONNECTION-SYNTAX
 // 9.3	check
-	syntax ParamenterConnection ::= "parameter" SourceParameterReference DirectionalConnectionSymbol DestinationParameterReference
-		syntax SourceParameterReference ::= "not define"
-		syntax DirectionalConnectionSymbol ::= "not define"
-		syntax DestinationParameterReference ::= "not define"
+	syntax ParameterConnection ::= "parameter" SourceParameterReference DirectionalConnectionSymbol DestinationParameterReference
+		syntax SourceParameterReference ::= ParameterReference // need rules
+		syntax DirectionalConnectionSymbol ::= ParameterReference
+		syntax DestinationParameterReference ::= ParameterReference
 
-	syntax ParamentConnectionRefinement ::= "paramenter"
-	syntax ParamenterReference ::= ComponentTypeParameterIdentifier 
+	syntax ParameterConnectionRefinement ::= "paramenter"
+	syntax ParameterReference ::= ComponentTypeParameterIdentifier 
 				    |  ComponentTypeParameterIdentifier "." DataSubcomponentIdentifier
 				    |  SubprogramCallIdentifier "." ParameterIdentifier
 				    |  ComponentTypePortIdentifier

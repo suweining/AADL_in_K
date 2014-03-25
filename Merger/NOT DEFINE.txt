@@ -1,0 +1,61 @@
+这些非终结符是没有定义的：
+
+// 4.8
+
+syntax AnnexSpecificLanguageConstructs ::= "not define"
+syntax AnnexSpecificReusableConstructs ::= "not define"
+
+
+// 4.3
+syntax ComponentTypePropertyAssociation ::=  "not define"
+
+// 8.7
+
+syntax BusUniqueComponentClassifierReference ::= "not define"
+
+//5.2
+
+syntax SubprogramUniqueComponentClassifierReference ::= "not define"
+syntax DataUniqueComponentTypeReference ::= "not define"
+syntax SubprogramGroupUniqueComponentTypeReference ::= "not define"
+syntax AbstractUniqueComponentTypeReference ::= "not define"
+
+//4.5 
+
+syntax Number ::= "not define" in 15
+
+// 11.1.1
+syntax NumericLiteral ::= "not define" in 15
+syntax RealPropertyConstantTerm ::= "not define" // should be PropertyConstantTerm,but need rules
+syntax RealLiteral ::= "not define" // in 15
+syntax IntegerPropertyConstantTerm ::=  "not define" // should be PropertyConstantTerm,but need rules
+syntax IntegerLiteral ::= "not define" // in 15
+
+//11.4 
+syntax BooleanPropertyConstantTerm ::= "not define" // PropertyConstantTerm
+syntax StringLiteral ::= "not define" // in 15
+syntax StringPropertyConstantTerm ::=  "not define" // PropertyConstantTerm
+syntax EnumerationPropertyConstantTerm ::= "not define"  // PropertyConstantTerm
+syntax UnitPropertyConstantTerm ::= "not define" // PropertyConstantTerm
+syntax IntegerRangePropertyConstantTerm ::= "not define" // PropertyConstantTerm
+syntax RealRangePropertyConstantTerm ::= "not define" // PropertyConstantTerm
+
+// 11.3
+syntax ProcessorUniqueComponentClassifierReference ::= "not define"
+syntax VirtualProcessorUniqueComponentClassifierReference ::= "not define"
+syntax VirtualBusUniqueComponentClassifierReference ::= "not define"
+syntax MemoryUniqueComponentClassifierReference ::= "not define"
+syntax NamedElementArraySelectionName ::= "not define"
+
+
+
+// 8.3
+syntax DataUniqueComponentClassifierReference ::= "not define"
+
+// 8.2
+syntax FeatureGroupContainedPropertyAssociation ::= "not define"
+
+
+
+
+

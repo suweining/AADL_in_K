@@ -19,25 +19,25 @@ module PROPERTYEXPRESSION-SYNTAX
 				    |  BooleanTerm "and"BooleanTerm
 				    |  BooleanTerm "or"BooleanTerm
 			syntax BooleanValue ::= "true" | "false"
-			syntax BooleanPropertyConstantTerm ::= "not define"
+			syntax BooleanPropertyConstantTerm ::= PropertyConstantTerm // need rules
 		syntax RealTerm::= SignedAadlrealOrConstant
 		syntax IntegerTerm ::= SignedAadlintegerOrConstant
 		syntax StringTerm ::= StringLiteral | StringPropertyConstantTerm
 			syntax StringLiteral ::= "not define"
-			syntax StringPropertyConstantTerm ::=  "not define"
+			syntax StringPropertyConstantTerm ::=  PropertyConstantTerm // need rules
 		syntax EnumerationTerm ::= EnumerationIdentifier | EnumerationPropertyConstantTerm
 			syntax EnumerationIdentifier ::= "not define"
-			syntax EnumerationPropertyConstantTerm ::= "not define" 
+			syntax EnumerationPropertyConstantTerm ::= PropertyConstantTerm // need rules
 		syntax UnitTerm ::= UnitIdentifier | UnitPropertyConstantTerm
-			syntax UnitPropertyConstantTerm ::= "not define"
+			syntax UnitPropertyConstantTerm ::= PropertyConstantTerm // need rules
 		syntax IntegerRangeTerm ::= IntegerTerm ".." IntegerTerm 
 				      |  IntegerTerm ".." IntegerTerm "delta" IntegerTerm
 				      |  IntegerRangePropertyConstantTerm
-			syntax IntegerRangePropertyConstantTerm ::= "not define"
+			syntax IntegerRangePropertyConstantTerm ::= PropertyConstantTerm // need rules
 		syntax RealRangeTerm ::= RealTerm ".." RealTerm
 					 |  RealTerm ".." RealTerm "delta" RealTerm
 					 |  RealRangePropertyConstantTerm
-			syntax RealRangePropertyConstantTerm ::= "not define"
+			syntax RealRangePropertyConstantTerm ::= PropertyConstantTerm // need rules
 		syntax PropertyTerm ::= PropertyNameIdentifier
 				      | PropertySetIdentifier "::" PropertyNameIdentifier
 		syntax ComponentClassifierTerm ::= "classifier" "(" UniqueComponentTypeReference ")"
@@ -46,7 +46,7 @@ module PROPERTYEXPRESSION-SYNTAX
 		syntax RecordTerm ::= "(" RecordFieldIdentifierIdentifierList ")"
 			syntax RecordFieldIdentifierIdentifierList ::= RecordFieldIdentifierIdentifier "=>" PropertyValue ";"
 								    |  RecordFieldIdentifierIdentifier "=>" PropertyValue ";" RecordFieldIdentifierIdentifierList 
-				syntax RecordFieldIdentifierIdentifier ::= "not define"
+				syntax RecordFieldIdentifierIdentifier ::= Id | Id "." Id | Id "_" Id
 		syntax ComputedTerm ::= "compute" "(" FunctionIdentifier ")"
 			syntax FunctionIdentifier ::= Id | Id "." Id | Id "_" Id
 	syntax PropertyConstantTerm ::= PropertyConstantIdentifier 

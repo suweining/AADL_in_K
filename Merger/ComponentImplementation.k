@@ -30,7 +30,7 @@ module COMPONENTIMPLEMENTATION-SYNTAX
 			syntax PropertyAssociation ::= PropertyAssociation PropertyAssociation
 			syntax ContainedPropertyAssociation ::= ContainedPropertyAssociation ContainedPropertyAssociation
 
-	syntax ComponetImplementExtention ::= ComponentCategory "implementation" ComponentImplementionName "extends" UniqueComponentImplementReference ComponentImplementationAssocDefination "end" ComponentImplementionName ";"
+	syntax ComponentImplementationExtension ::= ComponentCategory "implementation" ComponentImplementionName "extends" UniqueComponentImplementReference ComponentImplementationAssocDefination "end" ComponentImplementionName ";"
 		syntax 	ComponentImplementionName ::= Id | Id "." Id | Id "_" Id
 		syntax  UniqueComponentImplementReference ::= ComponentImplementName | PackageName "::" ComponentImplementName
 		syntax  ComponentImplementName ::=  Id | Id "." Id | Id "_" Id

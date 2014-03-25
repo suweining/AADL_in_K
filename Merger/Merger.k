@@ -104,6 +104,9 @@ require "PropertyExpression.k"
 //12.0
 require "ModesAndModeTransition.k"
 
+// 15.0
+require "LexicalElement.k"
+
 module MERGER
 	imports  PACKAGE-SYNTAX
 	imports  COMPONENTTYPE-SYNTAX
@@ -138,22 +141,7 @@ module MERGER
 	imports PROPERTYASSOCIATION-SYNTAX
 	imports PROPERTYEXPRESSION-SYNTAX
 	imports MODESANDMODETRANSITION-SYNTAX
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+	imports LEXICALELEMENT-SYNTAX
 
 endmodule
 

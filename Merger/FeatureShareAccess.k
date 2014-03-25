@@ -20,13 +20,10 @@ module FEATURESHAREACCESS-SYNTAX
 	
 
 	syntax FeatureRefinement ::= AbstractFeatureRefinement ArrayDimensionFeatrueContrained
-				  |  ProtRefinement ArrayDimensionFeatrueContrained
+				  |  PortRefinement ArrayDimensionFeatrueContrained
 				  |  FeatureGroupRefinement ArrayDimensionFeatrueContrained
 				  |  SubcomponentAccessRefinement ArrayDimensionFeatrueContrained
 				  |  ParameterRefinement ArrayDimensionFeatrueContrained
-
-		syntax ProtRefinement ::=  "not define"
-
 		syntax SubcomponentAccessRefinement ::= SubprogramAccessRefinement
 						     |  SubprogramGroupAccessRefinement
 						     |  DataAccessRefinement

@@ -18,7 +18,7 @@ module COMPONENTTYPE-SYNTAX
 						  | "properties" NoneStatement
 						  | AnnexSubclause 
 
-			syntax RequiresModesSubclause ::= "not define"
+			// syntax RequiresModesSubclause ::= "not define"
 			syntax ComponentTypePropertyAssociation ::=  "not define"
 			syntax AnnexSubclause ::= AnnexSubclause AnnexSubclause
 			syntax AnnexSubclause ::= NoneStatement

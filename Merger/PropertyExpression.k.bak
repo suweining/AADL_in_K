@@ -1,5 +1,5 @@
 module PROPERTYEXPRESSION-SYNTAX
-// 11.4
+// 11.4 check
 	syntax PropertyExpression ::= BooleanTerm 
 				   |  RealTerm
 				   |  IntegerTerm
@@ -19,12 +19,12 @@ module PROPERTYEXPRESSION-SYNTAX
 				    |  BooleanTerm "and"BooleanTerm
 				    |  BooleanTerm "or"BooleanTerm
 			syntax BooleanValue ::= "true" | "false"
-			syntax BooleanPropertyConstantTerm ::= "not define"
+			syntax BooleanPropertyConstantTerm ::= PropertyConstantTerm // need rules
 		syntax RealTerm::= SignedAadlrealOrConstant
 		syntax IntegerTerm ::= SignedAadlintegerOrConstant
 		syntax StringTerm ::= StringLiteral | StringPropertyConstantTerm
 			syntax StringLiteral ::= "not define"
-			syntax StringPropertyConstantTerm ::=  "not define"
+			syntax StringPropertyConstantTerm ::=  PropertyConstantTerm // need rules
 		syntax EnumerationTerm ::= EnumerationIdentifier | EnumerationPropertyConstantTerm
 			syntax EnumerationIdentifier ::= "not define"
 			syntax EnumerationPropertyConstantTerm ::= "not define" 

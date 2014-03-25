@@ -1,16 +1,17 @@
 module SUBCOMPONENT-SYNTAX
-// 4.5
+// 4.5 check
 	syntax Subcomponent ::= SubcomponentIdentifier ":" ComponentCategory SubcomponentAssocDefination ";"
 		syntax SubcomponentIdentifier ::= Id | Id "." Id | Id "_" Id
-		syntax SubcomponentAssocDefination ::= UniqueComponentClassReference ProtoTypeBindings
-						     | UniqueComponentClassReference
+		syntax SubcomponentAssocDefination ::= UniqueComponentClassifierReference ProtoTypeBindings
+						     | UniqueComponentClassifierReference
 						     | PrototypeIdentifier
 						     | ArrayDimensions ArrayelementImplementionList
 						     | ArrayDimensions
 						     | "{" SubcomponentProtertyAssociation "}" // +
 						     | "{" ContainedPropertyAssociation "}"// +
 						     | ComponentInModes 
-			syntax UniqueComponentClassReference ::= "not define"
+			syntax UniqueComponentClassifierReference ::= UniqueComponentTypeReference
+								   |  UniqueComponentImplementationReference
 			syntax PrototypeIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax ArrayDimensions ::= ArrayDimension // + but in 8.0,it is just [ArrayDimension]...i think here should be change
 				syntax ArrayDimension ::= ArrayDimension ArrayDimension 

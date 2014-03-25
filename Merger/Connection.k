@@ -6,15 +6,12 @@ module CONNECTION-SYNTAX
 					|  PortConnection
 					|  ParameterConnection
 					|  AccessConnection
-					|  FeatureGroupConnection
-
-			syntax ParameterConnection ::= "not define"
-
-		syntax PropertyInMode ::= "{" PropertyAssociationList "}" InModesAndTranstitions
+					|  FeatureGroupConnection		
+		syntax PropertyInMode ::= "{" PropertyAssociationList "}" InModesAndTransititions
 					| "{" PropertyAssociationList "}"
-					| InModesAndTranstitions
+					| InModesAndTransititions
 					| NoneStatement
-			syntax InModesAndTranstitions ::= "not define"
+			syntax InModesAndTransititions ::= "not define"
 			syntax PropertyAssociationList ::= PropertyAssociation | PropertyAssociation PropertyAssociationList
 
 	syntax ConnectionRefinement ::= ConnectionIdentifier ":" "refined ""to " SomeRefinements PropertyInMode ";"
@@ -22,11 +19,7 @@ module CONNECTION-SYNTAX
 					|  PortConnectionRefinement
 					|  ParameterConnectionRefinement
 					|  AccessConnectionRefinement
-					|  FeatureGroupConnectionRefinement
-
-			syntax ParameterConnectionRefinement ::= "not define"
-
-	
+					|  FeatureGroupConnectionRefinement	
 endmodule
 
 module CONNECTION 

@@ -29,7 +29,6 @@ module MODESANDMODETRANSITION-SYNTAX
 			syntax UniquePortIdentifier ::= PortIdentifier | SubcomponentFeatureGroupOrSubprogramCallIdentifier "." PortIdentifier
 				syntax SubcomponentFeatureGroupOrSubprogramCallIdentifier ::= "not define"
 			syntax EventSourceIdentifier ::= "not define"
-			syntax PortIdentifier ::= "not define"
 		syntax DestinationModeIdentifier ::= "not define"
 		syntax ModeTransitionPropertyAssociationList ::=  ModeTransitionPropertyAssociation |  ModeTransitionPropertyAssociation  ModeTransitionPropertyAssociationList
 			syntax ModeTransitionPropertyAssociation ::= "not define"
@@ -47,7 +46,7 @@ module MODESANDMODETRANSITION-SYNTAX
 		syntax ModeOrTransitionList ::= ModeOrTransition | ModeOrTransition "," ModeOrTransitionList 
 			syntax ModeOrTransition ::= "not define"
 	
-//	syntax NoneStatement ::= "not define"
+
 endmodule
 
 module MODESANDMODETRANSITION

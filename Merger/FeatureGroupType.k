@@ -30,13 +30,14 @@ module FEATUREGROUPTYPE-SYNATX
 					syntax ProtoTypeList ::= ProtoType | ProtoType ProtoTypeList
 					syntax ProtoTypeRefinementList ::= ProtoTypeRefinement | ProtoTypeRefinement ProtoTypeRefinementList
 			syntax  FeatureOfFeatureGroupTypeExtension ::= "features" FeatureOfFeatureGroupTypeExtensionTmp
-				syntax FeatureOfFeatureGroupTypeExtensionTmp ::= FeatureList | FeatureRinementList | NoneStatement
+				syntax FeatureOfFeatureGroupTypeExtensionTmp ::= FeatureList | FeatureRefinementList | NoneStatement
 					syntax FeatureList ::= Feature | Feature FeatureList
-					syntax FeatureRinementList ::= FeatureRinement | FeatureRinement FeatureRinementList
-						syntax FeatureRinement ::= "not define"
+					syntax FeatureRefinementList ::= FeatureRefinement | FeatureRefinement FeatureRefinementList
 			syntax  InverseOfFeatureGroupTypeExtension  ::= InverseOfFeatureGroupType // they have the same syntax
 			syntax  PropertyOfFeatureGroupTypeExtension ::= PropertyOfFeatureGroupType
-			syntax  AnnexOfFeatureGroupTypeExtension ::= "not define"
+			syntax  AnnexOfFeatureGroupTypeExtension ::= NoneStatement
+								   | AnnexSubclause 
+								   | AnnexSubclause AnnexOfFeatureGroupTypeExtension
 
 	syntax FeatureGroupSpec ::= FeatureGroupIdentifier ":" FeatureGroupSpecAssocDefination 
 		syntax FeatureGroupSpecAssocDefination ::= InOut "feature" "group" InverseOfUniqueProtoType

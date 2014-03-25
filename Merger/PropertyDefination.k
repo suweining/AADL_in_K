@@ -1,17 +1,17 @@
 module PROPERTYDEFINATION-SYNTAX
 // 11.1.2
-	syntax PropertyDefinationDeclaration ::= PropertyNameIdentifier ":" PropertyDefinationDeclarationAssocDefination ";"
+	syntax PropertyDefinitionDeclaration ::= PropertyNameIdentifier ":" PropertyDefinationDeclarationAssocDefination ";"
 		syntax PropertyNameIdentifier ::= Id | Id "." Id | Id "_" Id
 		syntax PropertyDefinationDeclarationAssocDefination ::= "inherit " SingleValuedProperty "applies ""to " PropertyOwnerList 
 								     |  "inherit " MultiValuedProperty "applies ""to " PropertyOwnerList 
 								     |   SingleValuedProperty "applies ""to " PropertyOwnerList 
 								     |	 MultiValuedProperty "applies ""to " PropertyOwnerList 
 			syntax SingleValuedProperty ::= PropertyTypeDesignator | PropertyTypeDesignator "=>" DefaultPropertyExpression
-				syntax DefaultPropertyExpression ::= "not define"
+				syntax DefaultPropertyExpression ::= PropertyExpression
 			syntax MultiValuedProperty ::= ListOf PropertyTypeDesignator "=>" DefaultPropertyListValue
 						    | ListOf PropertyTypeDesignator 
 				syntax ListOf ::= "list ""of " |  "list ""of " ListOf 
-				syntax DefaultPropertyListValue ::= "not define"
+				syntax DefaultPropertyListValue ::= PropertyListValue
 			syntax PropertyOwnerList ::= PropertyOwner | PropertyOwner "," PropertyOwnerList
 				syntax PropertyOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierReference
 					syntax UniqueClassifierReference ::= UniqueComponentClassifierReference | UniqueFeatureGroupTypeReference

@@ -21,13 +21,13 @@ module PACKAGE-SYNTAX
 						syntax ImportDeclarationPlus ::= ImportDeclarationPlus ImportDeclarationPlus
 							syntax PropertySetIdentifier ::= Id | Id"."Id | Id"_"Id
 					syntax AliasDeclaration ::= DefiningIdentifier "renames package" PackageName ";"
-								  | DefiningIdentifier "renames" ComponentCategory UniqueCompentTypeReference ";"
+								  | DefiningIdentifier "renames" ComponentCategory UniqueComponentTypeReference ";"
 								  | DefiningIdentifier "renames" "feartur""group" UniqueFeatureGroupTypeReference ";"
-								  | "renames" ComponentCategory UniqueCompentTypeReference ";"
+								  | "renames" ComponentCategory UniqueComponentTypeReference ";"
 								  | "renames" "feartur group" UniqueFeatureGroupTypeReference ";"
 								  | "renames" PackageName "::" "all" ";"
 						syntax DefiningIdentifier ::= Id | Id"."Id | Id"_"Id
-						syntax UniqueCompentTypeReference ::=  "not define"
+					//	syntax UniqueCompenentTypeReference ::=  "not define"
 
 				syntax AADLDeclaration ::= ClassifierDeclaration | AnnexLibrary
 					syntax ClassifierDeclaration ::= ComponentClassifierDeclaration | FeatureGroupClassifierDeclaration
@@ -35,7 +35,6 @@ module PACKAGE-SYNTAX
 											| ComponentTypeExtension
 											| ComponentImplementation
 											| ComponentImplementationExtension
-					syntax ComponentImplementationExtension ::= "not define"
 						syntax FeatureGroupClassifierDeclaration ::= FeatureGroupType | FeatureGroupTypeExtension
 
 		syntax PropertyDecls ::= PropertyAssociation | NoneStatement

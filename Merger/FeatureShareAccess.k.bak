@@ -1,5 +1,5 @@
 module FEATURESHAREACCESS-SYNTAX
-// 8.0
+// 8.0 check
 	syntax Feature ::= AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"	
 		syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
 							| "{" FeatrueContrainedPropertyAssociation "}"
@@ -20,7 +20,7 @@ module FEATURESHAREACCESS-SYNTAX
 	
 
 	syntax FeatureRefinement ::= AbstractFeatureRefinement ArrayDimensionFeatrueContrained
-				  |  ProtRefinement ArrayDimensionFeatrueContrained
+				  |  PortRefinement ArrayDimensionFeatrueContrained
 				  |  FeatureGroupRefinement ArrayDimensionFeatrueContrained
 				  |  SubcomponentAccessRefinement ArrayDimensionFeatrueContrained
 				  |  ParameterRefinement ArrayDimensionFeatrueContrained

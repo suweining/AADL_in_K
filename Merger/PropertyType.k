@@ -16,11 +16,11 @@ module PROPERTYTYPE-SYNTAX
 					syntax EnumerationLiteralIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax UnitsType ::= "units" UnitsList
 				syntax UnitsList ::= "(" UnitIdentifier UnitIdentifierList ")"
-					syntax UnitIdentifier ::= "not define"
+					syntax UnitIdentifier ::= Id | Id"."Id | Id "_" Id
 					syntax UnitIdentifierList ::= NoneStatement
 								   |  "," UnitIdentifier "=>" UnitIdentifier "*" NumericLiteral 
 								   |   "," UnitIdentifier "=>" UnitIdentifier "*" NumericLiteral  UnitIdentifierList
-						syntax NumericLiteral ::= "not define"
+						syntax NumericLiteral ::= "not define" // define in 15
 			syntax NumberType ::= RealInteger 
 					   |  RealInteger "units "  UnitsDesignator // i do not know is here the spares is needed
 				syntax RealInteger ::= "aadlreal " | "aadlinterger "
@@ -36,8 +36,8 @@ module PROPERTYTYPE-SYNTAX
 											  |  Sign RealLiteral
 											  |  RealLiteral UnitIdentifier
 											  |  RealLiteral 
-									syntax RealLiteral ::= "not define"
-								syntax RealPropertyConstantTerm ::= "not define"
+									syntax RealLiteral ::= "not define" // in 15
+								syntax RealPropertyConstantTerm ::= PropertyConstantTerm // here need rule to check
 								syntax Sign ::= "-" | "+"
 					syntax IntegerRange ::= IntegerLowerBound ".." IntegerUpperBound
 						syntax IntegerLowerBound ::= SignedAadlintegerOrConstant
@@ -49,9 +49,9 @@ module PROPERTYTYPE-SYNTAX
 											  |  Sign IntegerLiteral
 											  |  IntegerLiteral UnitIdentifier
 											  |  IntegerLiteral 
-									syntax IntegerLiteral ::= "not define"
+									syntax IntegerLiteral ::= "not define"// in 15
 									
-								syntax IntegerPropertyConstantTerm ::=  "not define"
+								syntax IntegerPropertyConstantTerm ::=  PropertyConstantTerm // here need rule to check
 				syntax UnitsDesignator ::= UnitsUniquePropertyTypeIdentifier | UnitsList
 					syntax UnitsUniquePropertyTypeIdentifier ::= Id | Id "." Id | Id "_" Id
 			syntax RangeType ::= "range ""of " NumberType

@@ -1,5 +1,5 @@
 module COMPONENTTYPE-SYNTAX
-// 4.3
+// 4.3 check
 	syntax ComponentType ::= ComponentCategory ComponentTypeIdentifier ComponentAssocDefination "end" ComponentTypeIdentifier ";"
 		syntax ComponentCategory ::= AbstractComponentCategory | SoftwareCategory | ExecutionPlateformCategory | CompositeCategory
 			syntax AbstractComponentCategory ::= "abstract"
