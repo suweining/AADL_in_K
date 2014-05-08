@@ -35,7 +35,7 @@ module LEXICALELEMENT-SYNTAX
 								  |  ExtendedDigit
 								  |  UnderLine ExtendedDigit
 								  |  ExtendedDigitList ExtendedDigitList
-					syntax ExtendedDigit ::= Digit | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" 
+					syntax ExtendedDigit ::= Digit | "A" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" 
 		syntax RealLiteral ::= DecimalRealLiteral
 			syntax DecimalRealLiteral ::= Numeral "." Numeral 
 						   | Numeral"." Numeral Exponent
