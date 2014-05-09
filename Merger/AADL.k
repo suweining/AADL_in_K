@@ -108,7 +108,7 @@ require "ModesAndModeTransition.k"
 // 15.0
 require "LexicalElement.k"
 
-module MERGER-SYNTAX
+module AADL-SYNTAX
 
 //	imports AADLSPECIFICATION-SYNTAX
 	imports PACKAGE-SYNTAX
@@ -146,9 +146,9 @@ module MERGER-SYNTAX
 
 endmodule
 
-module MERGER
+module AADL
 
-	imports MERGER-SYNTAX
+	imports AADL-SYNTAX
 
 	syntax AADLSpecification ::= PackageSpecPropertySetList
 		syntax PackageSpecPropertySetList ::= PackageSpec | PropertySet
