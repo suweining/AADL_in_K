@@ -1,0 +1,30 @@
+module COMMONDEF
+  syntax NODEF::="not define"
+  syntax NoneStatement::="none"// | " "
+  syntax ArrayDimension ::= NODEF
+  syntax DataAccessSpec ::= NODEF
+  syntax BusAccessSpec ::= NODEF
+  syntax ParameterRefinement ::=NODEF
+  syntax SubprogramAccessRefinement ::= NODEF
+  syntax ParameterSpec::= NODEF
+  syntax SubprogramGroupAccessSpec::=NODEF
+  syntax SubprogramAccessSpec ::= NODEF
+  syntax SubprogramGroupAccessRefinement ::=NODEF
+  syntax DataAccessRefinement ::= NODEF
+  syntax BusAccessRefinement ::= NODEF
+  syntax ProtoTypeBindings ::=NODEF
+  syntax ProtoTypeRefinement ::=NODEF
+  syntax FeatureGroupIdentifier ::= NODEF
+  syntax InOut ::=NODEF
+  syntax ProtoTypeIdentifier ::= NODEF
+  syntax PropertyAssociationList ::=NODEF
+  syntax InModes ::= NODEF
+  syntax InModesAndTransitions ::=NODEF
+  syntax FeatureIdentifier ::= NODEF
+  syntax ConnectionIdentifier ::=NODEF
+  syntax SubcomponentIdentifier ::=NODEF
+  syntax DataSubcomponentIdentifier ::= NODEF
+  syntax RequiresDataAccessIdentifier ::= NODEF
+  syntax ProvidesDataAccessIdentifier ::=NODEF
+  syntax PropertySet ::= NODEF
+endmodule 
